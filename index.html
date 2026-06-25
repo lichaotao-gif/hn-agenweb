@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>湖南省中小学人工智能通识教育平台</title>
-<meta name="description" content="湖南省中小学人工智能通识教育平台 —— 汇聚课程资源、教研中心、师训中心与 AI 实验室，赋能中小学人工智能教育。" />
+<meta name="description" content="湖南省中小学人工智能通识教育平台 —— 汇聚课程资源、师训中心与赛事活动，赋能中小学人工智能教育。" />
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,7 +42,7 @@
 
   .cover-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
   .cover::after { z-index:1; }
-  .cover > :not(.cover-img) { position:relative; z-index:10; }
+  .cover > :not(.cover-img):not(.absolute) { position:relative; z-index:10; } .cover > .absolute { z-index:10; }
 
   /* 滚动感知导航 */
   #siteHeader { background:rgba(255,255,255,.05); backdrop-filter:blur(5px); -webkit-backdrop-filter:blur(5px); border-bottom:1px solid rgba(255,255,255,.10); transition:background .3s ease, border-color .3s ease, box-shadow .3s ease; }
@@ -92,10 +92,9 @@
     <!-- Desktop menu -->
     <ul class="hidden lg:flex items-center gap-1 text-[15px] font-medium">
       <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="#top">首页</a></li>
-      <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="#courses">课程资源</a></li>
-      <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="#research">教研中心</a></li>
+      <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="courses.html">课程资源</a></li>
       <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="#training">师训中心</a></li>
-      <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="#lab">AI实验室</a></li>
+      <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="events.html">赛事活动</a></li>
       <li><button onclick="openDownload()" class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors cursor-pointer">下载</button></li>
     </ul>
 
@@ -114,10 +113,9 @@
 
   <!-- mobile menu -->
   <div id="mobileMenu" class="hidden lg:hidden border-t border-brand-100 bg-white px-4 py-3 space-y-1 text-brand-800 font-medium">
-    <a class="block px-3 py-2 rounded-lg hover:bg-brand-50" href="#courses" onclick="toggleMobile()">课程资源</a>
-    <a class="block px-3 py-2 rounded-lg hover:bg-brand-50" href="#research" onclick="toggleMobile()">教研中心</a>
+    <a class="block px-3 py-2 rounded-lg hover:bg-brand-50" href="courses.html" onclick="toggleMobile()">课程资源</a>
     <a class="block px-3 py-2 rounded-lg hover:bg-brand-50" href="#training" onclick="toggleMobile()">师训中心</a>
-    <a class="block px-3 py-2 rounded-lg hover:bg-brand-50" href="#lab" onclick="toggleMobile()">AI实验室</a>
+    <a class="block px-3 py-2 rounded-lg hover:bg-brand-50" href="events.html" onclick="toggleMobile()">赛事活动</a>
     <button onclick="openDownload();toggleMobile()" class="w-full text-left px-3 py-2 rounded-lg hover:bg-brand-50 cursor-pointer">下载</button>
     <button onclick="openLogin();toggleMobile()" class="w-full text-left px-3 py-2 rounded-lg hover:bg-brand-50 cursor-pointer">登录 / 注册</button>
   </div>
@@ -150,9 +148,9 @@
           开始学习
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="#lab" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 border border-white/30 text-white font-semibold hover:bg-white/20 backdrop-blur transition-colors cursor-pointer">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg>
-          进入 AI 实验室
+        <a href="events.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 border border-white/30 text-white font-semibold hover:bg-white/20 backdrop-blur transition-colors cursor-pointer">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+          查看赛事活动
         </a>
       </div>
 
@@ -288,21 +286,17 @@
 
     <!-- 快捷入口 -->
     <div class="grid grid-cols-2 grid-rows-2 gap-4 h-full">
-      <a href="#courses" class="lift bg-gradient-to-br from-brand-500 to-brand-600 text-white rounded-2xl p-5 shadow-card cursor-pointer">
+      <a href="courses.html" class="lift bg-gradient-to-br from-brand-500 to-brand-600 text-white rounded-2xl p-5 shadow-card cursor-pointer">
         <svg class="w-7 h-7 mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
         <div class="font-bold">课程资源</div><div class="text-xs text-white/75 mt-1">分学段精选课程</div>
       </a>
-      <a href="#research" class="lift bg-gradient-to-br from-white to-sky-50 border border-brand-100 rounded-2xl p-5 shadow-card cursor-pointer">
-        <svg class="w-7 h-7 mb-3 text-sky-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
-        <div class="font-bold text-brand-900">教研中心</div><div class="text-xs text-brand-800/55 mt-1">示范课与教研视频</div>
+      <a href="#training" class="lift bg-gradient-to-br from-violet-500 to-indigo-600 text-white rounded-2xl p-5 shadow-card cursor-pointer">
+        <svg class="w-7 h-7 mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        <div class="font-bold">师训中心</div><div class="text-xs text-white/75 mt-1">名师课程 · 教师成长</div>
       </a>
-      <a href="#training" class="lift bg-gradient-to-br from-white to-brand-50 border border-brand-100 rounded-2xl p-5 shadow-card cursor-pointer">
-        <svg class="w-7 h-7 mb-3 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-        <div class="font-bold text-brand-900">师训中心</div><div class="text-xs text-brand-800/55 mt-1">名师课程 · 教师成长</div>
-      </a>
-      <a href="#lab" class="lift bg-gradient-to-br from-sky-500 to-blue-600 text-white rounded-2xl p-5 shadow-card cursor-pointer">
-        <svg class="w-7 h-7 mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg>
-        <div class="font-bold">AI 实验室</div><div class="text-xs text-white/75 mt-1">在线实验 · 即点即用</div>
+      <a href="events.html" class="lift col-span-2 bg-gradient-to-br from-sky-500 to-blue-600 text-white rounded-2xl p-5 shadow-card cursor-pointer flex items-center gap-4">
+        <svg class="w-8 h-8 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+        <div><div class="font-bold">赛事活动</div><div class="text-xs text-white/75 mt-0.5">报名 · 在线参赛</div></div>
       </a>
     </div>
   </div>
@@ -314,132 +308,191 @@
     <div class="reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
       <div>
         <h2 class="text-2xl sm:text-3xl font-black text-brand-900">课程资源</h2>
-        <p class="mt-2 text-brand-800/65">覆盖小学、初中、高中全学段的人工智能精品课程</p>
+        <p class="mt-2 text-brand-800/65">3–9 年级双师 AI 课 · 小学（3–6 年级）与初中（7–9 年级）按年级顺序排列</p>
       </div>
       <!-- 学段筛选 -->
-      <div class="flex flex-wrap gap-2">
-        <button class="px-4 py-1.5 rounded-full bg-brand-600 text-white text-sm font-medium cursor-pointer">全部</button>
-        <button class="px-4 py-1.5 rounded-full bg-white border border-brand-100 text-brand-700 text-sm font-medium hover:border-brand-300 transition-colors cursor-pointer">小学</button>
-        <button class="px-4 py-1.5 rounded-full bg-white border border-brand-100 text-brand-700 text-sm font-medium hover:border-brand-300 transition-colors cursor-pointer">初中</button>
-        <button class="px-4 py-1.5 rounded-full bg-white border border-brand-100 text-brand-700 text-sm font-medium hover:border-brand-300 transition-colors cursor-pointer">高中</button>
+      <div id="courseFilter" class="flex flex-wrap gap-2">
+        <button data-ef="all" class="cf-tab px-4 py-1.5 rounded-full bg-brand-600 text-white text-sm font-medium cursor-pointer">全部</button>
+        <button data-ef="primary" class="cf-tab px-4 py-1.5 rounded-full bg-white border border-brand-100 text-brand-700 text-sm font-medium hover:border-brand-300 transition-colors cursor-pointer">小学（3–6 年级）</button>
+        <button data-ef="junior" class="cf-tab px-4 py-1.5 rounded-full bg-white border border-brand-100 text-brand-700 text-sm font-medium hover:border-brand-300 transition-colors cursor-pointer">初中（7–9 年级）</button>
       </div>
     </div>
 
-    <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- 课程卡模板 -->
-      <a href="course-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
-        <div class="cover cv1 aspect-video grid place-items-center">
-          <img src="assets/generated/jpg/robotics-kit.jpg" alt="奇妙的机器人世界课程封面" class="cover-img" />
+    <div id="courseGrid" class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <a href="course-detail.html" data-stage="primary" class="course-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <div class="cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/robotics-kit.jpg" alt="三年级 走进人工智能（上册）课程封面" class="cover-img" />
           <span class="absolute top-3 right-3 z-10 px-3.5 py-1.5 rounded-lg text-base font-bold shadow-md bg-amber-400 text-amber-950">小学</span>
         </div>
         <div class="p-4">
-          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-amber-100 text-amber-700 align-[2px]">小学</span>奇妙的机器人世界</h3>
-          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">从认识机器人开始，了解 AI 如何感知与行动。</p>
-          <div class="mt-3 flex items-center gap-3 text-xs text-brand-800/50"><span>12 课时</span><span>·</span><span>3.6万 学习</span></div>
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-amber-100 text-amber-700 align-[2px]">三年级</span>走进人工智能</h3>
+          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">认识身边的人工智能，了解 AI 如何看、听、说。</p>
+          <div class="mt-3 flex items-center gap-2 text-xs text-brand-800/50"><span class="px-2 py-0.5 rounded-md bg-brand-100 text-brand-700 font-semibold">上册</span><span>8 课时</span></div>
         </div>
       </a>
 
-      <a href="course-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
-        <div class="cover cv2 aspect-video grid place-items-center">
-          <img src="assets/generated/jpg/python-coding.jpg" alt="Python 编程入门课程封面" class="cover-img" />
+      <a href="course-detail.html" data-stage="primary" class="course-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <div class="cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/robotics-kit.jpg" alt="三年级 走进人工智能（下册）课程封面" class="cover-img" />
+          <span class="absolute top-3 right-3 z-10 px-3.5 py-1.5 rounded-lg text-base font-bold shadow-md bg-amber-400 text-amber-950">小学</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-amber-100 text-amber-700 align-[2px]">三年级</span>走进人工智能</h3>
+          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">认识身边的人工智能，了解 AI 如何看、听、说。</p>
+          <div class="mt-3 flex items-center gap-2 text-xs text-brand-800/50"><span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-700 font-semibold">下册</span><span>8 课时</span></div>
+        </div>
+      </a>
+
+      <a href="course-detail.html" data-stage="primary" class="course-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <div class="cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/ai-classroom-students.jpg" alt="四年级 趣味智能体验（上册）课程封面" class="cover-img" />
+          <span class="absolute top-3 right-3 z-10 px-3.5 py-1.5 rounded-lg text-base font-bold shadow-md bg-amber-400 text-amber-950">小学</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-amber-100 text-amber-700 align-[2px]">四年级</span>趣味智能体验</h3>
+          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">通过互动体验感受智能技术，激发探索兴趣。</p>
+          <div class="mt-3 flex items-center gap-2 text-xs text-brand-800/50"><span class="px-2 py-0.5 rounded-md bg-brand-100 text-brand-700 font-semibold">上册</span><span>10 课时</span></div>
+        </div>
+      </a>
+
+      <a href="course-detail.html" data-stage="primary" class="course-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <div class="cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/ai-classroom-students.jpg" alt="四年级 趣味智能体验（下册）课程封面" class="cover-img" />
+          <span class="absolute top-3 right-3 z-10 px-3.5 py-1.5 rounded-lg text-base font-bold shadow-md bg-amber-400 text-amber-950">小学</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-amber-100 text-amber-700 align-[2px]">四年级</span>趣味智能体验</h3>
+          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">通过互动体验感受智能技术，激发探索兴趣。</p>
+          <div class="mt-3 flex items-center gap-2 text-xs text-brand-800/50"><span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-700 font-semibold">下册</span><span>10 课时</span></div>
+        </div>
+      </a>
+
+      <a href="course-detail.html" data-stage="primary" class="course-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <div class="cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/ai-app-modules.jpg" alt="五年级 图形化编程入门（上册）课程封面" class="cover-img" />
+          <span class="absolute top-3 right-3 z-10 px-3.5 py-1.5 rounded-lg text-base font-bold shadow-md bg-amber-400 text-amber-950">小学</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-amber-100 text-amber-700 align-[2px]">五年级</span>图形化编程入门</h3>
+          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">用图形化积木搭建小程序，建立编程思维。</p>
+          <div class="mt-3 flex items-center gap-2 text-xs text-brand-800/50"><span class="px-2 py-0.5 rounded-md bg-brand-100 text-brand-700 font-semibold">上册</span><span>12 课时</span></div>
+        </div>
+      </a>
+
+      <a href="course-detail.html" data-stage="primary" class="course-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <div class="cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/ai-app-modules.jpg" alt="五年级 图形化编程入门（下册）课程封面" class="cover-img" />
+          <span class="absolute top-3 right-3 z-10 px-3.5 py-1.5 rounded-lg text-base font-bold shadow-md bg-amber-400 text-amber-950">小学</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-amber-100 text-amber-700 align-[2px]">五年级</span>图形化编程入门</h3>
+          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">用图形化积木搭建小程序，建立编程思维。</p>
+          <div class="mt-3 flex items-center gap-2 text-xs text-brand-800/50"><span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-700 font-semibold">下册</span><span>12 课时</span></div>
+        </div>
+      </a>
+
+      <a href="course-detail.html" data-stage="primary" class="course-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <div class="cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/computer-vision-experiment.jpg" alt="六年级 智能应用初探（上册）课程封面" class="cover-img" />
+          <span class="absolute top-3 right-3 z-10 px-3.5 py-1.5 rounded-lg text-base font-bold shadow-md bg-amber-400 text-amber-950">小学</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-amber-100 text-amber-700 align-[2px]">六年级</span>智能应用初探</h3>
+          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">动手制作图像识别等小应用，体验 AI 的力量。</p>
+          <div class="mt-3 flex items-center gap-2 text-xs text-brand-800/50"><span class="px-2 py-0.5 rounded-md bg-brand-100 text-brand-700 font-semibold">上册</span><span>12 课时</span></div>
+        </div>
+      </a>
+
+      <a href="course-detail.html" data-stage="primary" class="course-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <div class="cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/computer-vision-experiment.jpg" alt="六年级 智能应用初探（下册）课程封面" class="cover-img" />
+          <span class="absolute top-3 right-3 z-10 px-3.5 py-1.5 rounded-lg text-base font-bold shadow-md bg-amber-400 text-amber-950">小学</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-amber-100 text-amber-700 align-[2px]">六年级</span>智能应用初探</h3>
+          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">动手制作图像识别等小应用，体验 AI 的力量。</p>
+          <div class="mt-3 flex items-center gap-2 text-xs text-brand-800/50"><span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-700 font-semibold">下册</span><span>12 课时</span></div>
+        </div>
+      </a>
+
+      <a href="course-detail.html" data-stage="junior" class="course-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <div class="cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/python-coding.jpg" alt="七年级 Python 编程入门（上册）课程封面" class="cover-img" />
           <span class="absolute top-3 right-3 z-10 px-3.5 py-1.5 rounded-lg text-base font-bold shadow-md bg-brand-500 text-white">初中</span>
         </div>
         <div class="p-4">
-          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-brand-100 text-brand-700 align-[2px]">初中</span>Python 编程入门</h3>
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-brand-100 text-brand-700 align-[2px]">七年级</span>Python 编程入门</h3>
           <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">用 Python 写出第一个智能小程序，开启编程之旅。</p>
-          <div class="mt-3 flex items-center gap-3 text-xs text-brand-800/50"><span>20 课时</span><span>·</span><span>5.2万 学习</span></div>
+          <div class="mt-3 flex items-center gap-2 text-xs text-brand-800/50"><span class="px-2 py-0.5 rounded-md bg-brand-100 text-brand-700 font-semibold">上册</span><span>16 课时</span></div>
         </div>
       </a>
 
-      <a href="course-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
-        <div class="cover cv3 aspect-video grid place-items-center">
-          <img src="assets/generated/jpg/machine-learning-classroom.jpg" alt="机器学习原理与应用课程封面" class="cover-img" />
-          <span class="absolute top-3 right-3 z-10 px-3.5 py-1.5 rounded-lg text-base font-bold shadow-md bg-grass-500 text-white">高中</span>
-        </div>
-        <div class="p-4">
-          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-grass-500/15 text-grass-600 align-[2px]">高中</span>机器学习原理与应用</h3>
-          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">理解分类、回归与神经网络的基本思想与实践。</p>
-          <div class="mt-3 flex items-center gap-3 text-xs text-brand-800/50"><span>24 课时</span><span>·</span><span>2.8万 学习</span></div>
-        </div>
-      </a>
-
-      <a href="course-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
-        <div class="cover cv4 aspect-video grid place-items-center">
-          <img src="assets/generated/jpg/computer-vision-experiment.jpg" alt="图像识别与计算机视觉课程封面" class="cover-img" />
+      <a href="course-detail.html" data-stage="junior" class="course-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <div class="cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/python-coding.jpg" alt="七年级 Python 编程入门（下册）课程封面" class="cover-img" />
           <span class="absolute top-3 right-3 z-10 px-3.5 py-1.5 rounded-lg text-base font-bold shadow-md bg-brand-500 text-white">初中</span>
         </div>
         <div class="p-4">
-          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-brand-100 text-brand-700 align-[2px]">初中</span>图像识别与计算机视觉</h3>
-          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">让计算机"看懂"世界，动手训练你的识别模型。</p>
-          <div class="mt-3 flex items-center gap-3 text-xs text-brand-800/50"><span>16 课时</span><span>·</span><span>4.1万 学习</span></div>
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-brand-100 text-brand-700 align-[2px]">七年级</span>Python 编程入门</h3>
+          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">用 Python 写出第一个智能小程序，开启编程之旅。</p>
+          <div class="mt-3 flex items-center gap-2 text-xs text-brand-800/50"><span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-700 font-semibold">下册</span><span>16 课时</span></div>
+        </div>
+      </a>
+
+      <a href="course-detail.html" data-stage="junior" class="course-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <div class="cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/machine-learning-classroom.jpg" alt="八年级 数据分析与算法（上册）课程封面" class="cover-img" />
+          <span class="absolute top-3 right-3 z-10 px-3.5 py-1.5 rounded-lg text-base font-bold shadow-md bg-brand-500 text-white">初中</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-brand-100 text-brand-700 align-[2px]">八年级</span>数据分析与算法</h3>
+          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">学习数据处理与基础算法，培养计算思维。</p>
+          <div class="mt-3 flex items-center gap-2 text-xs text-brand-800/50"><span class="px-2 py-0.5 rounded-md bg-brand-100 text-brand-700 font-semibold">上册</span><span>18 课时</span></div>
+        </div>
+      </a>
+
+      <a href="course-detail.html" data-stage="junior" class="course-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <div class="cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/machine-learning-classroom.jpg" alt="八年级 数据分析与算法（下册）课程封面" class="cover-img" />
+          <span class="absolute top-3 right-3 z-10 px-3.5 py-1.5 rounded-lg text-base font-bold shadow-md bg-brand-500 text-white">初中</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-brand-100 text-brand-700 align-[2px]">八年级</span>数据分析与算法</h3>
+          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">学习数据处理与基础算法，培养计算思维。</p>
+          <div class="mt-3 flex items-center gap-2 text-xs text-brand-800/50"><span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-700 font-semibold">下册</span><span>18 课时</span></div>
+        </div>
+      </a>
+
+      <a href="course-detail.html" data-stage="junior" class="course-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <div class="cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/pbl-teaching.jpg" alt="九年级 机器学习初步（上册）课程封面" class="cover-img" />
+          <span class="absolute top-3 right-3 z-10 px-3.5 py-1.5 rounded-lg text-base font-bold shadow-md bg-brand-500 text-white">初中</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-brand-100 text-brand-700 align-[2px]">九年级</span>机器学习初步</h3>
+          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">理解分类、预测等机器学习基本思想与实践。</p>
+          <div class="mt-3 flex items-center gap-2 text-xs text-brand-800/50"><span class="px-2 py-0.5 rounded-md bg-brand-100 text-brand-700 font-semibold">上册</span><span>20 课时</span></div>
+        </div>
+      </a>
+
+      <a href="course-detail.html" data-stage="junior" class="course-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <div class="cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/pbl-teaching.jpg" alt="九年级 机器学习初步（下册）课程封面" class="cover-img" />
+          <span class="absolute top-3 right-3 z-10 px-3.5 py-1.5 rounded-lg text-base font-bold shadow-md bg-brand-500 text-white">初中</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors"><span class="inline-block px-1.5 py-0.5 mr-1.5 rounded text-xs font-bold bg-brand-100 text-brand-700 align-[2px]">九年级</span>机器学习初步</h3>
+          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">理解分类、预测等机器学习基本思想与实践。</p>
+          <div class="mt-3 flex items-center gap-2 text-xs text-brand-800/50"><span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-700 font-semibold">下册</span><span>20 课时</span></div>
         </div>
       </a>
     </div>
+
+    <p id="courseEmpty" class="hidden text-center text-brand-800/50 py-8">该学段下暂无课程</p>
 
     <div class="reveal mt-8 text-center">
-      <a href="#" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-brand-200 text-brand-700 font-semibold hover:bg-brand-50 transition-colors cursor-pointer">查看全部课程
+      <a href="courses.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-brand-200 text-brand-700 font-semibold hover:bg-brand-50 transition-colors cursor-pointer">查看全部课程
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 教研中心 ============ -->
-<section id="research" class="py-16 scroll-mt-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="reveal flex items-end justify-between gap-4 mb-8">
-      <div>
-        <h2 class="text-2xl sm:text-3xl font-black text-brand-900">教研中心</h2>
-        <p class="mt-2 text-brand-800/65">示范课、教研专题视频，点击进入查看分集课程与资源介绍</p>
-      </div>
-      <a href="#" class="hidden sm:inline text-sm text-brand-600 hover:text-brand-700 font-medium">全部教研 ›</a>
-    </div>
-
-    <div class="reveal grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- 教研视频卡（含 N 节课角标） -->
-      <a href="course-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
-        <div class="cover cv7 aspect-video grid place-items-center">
-          <img src="assets/generated/jpg/pbl-teaching.jpg" alt="人工智能项目式教学设计专题封面" class="cover-img" />
-          <span class="relative z-10 grid place-items-center w-14 h-14 rounded-full bg-white/25 backdrop-blur group-hover:scale-110 transition-transform">
-            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </span>
-          <span class="absolute bottom-3 right-3 z-10 px-2 py-0.5 rounded-md text-xs font-semibold bg-black/55 text-white">共 5 节</span>
-        </div>
-        <div class="p-4">
-          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">人工智能项目式教学设计专题</h3>
-          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">围绕真实情境，拆解 PBL 在 AI 课堂中的落地路径。</p>
-          <div class="mt-3 flex items-center gap-2 text-xs text-brand-800/50"><span class="px-2 py-0.5 rounded bg-brand-50 text-brand-600">示范课</span><span>时长 2 小时 10 分</span></div>
-        </div>
-      </a>
-
-      <a href="course-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
-        <div class="cover cv3 aspect-video grid place-items-center">
-          <img src="assets/generated/jpg/machine-learning-classroom.jpg" alt="生成式 AI 在课堂中的应用封面" class="cover-img" />
-          <span class="relative z-10 grid place-items-center w-14 h-14 rounded-full bg-white/25 backdrop-blur group-hover:scale-110 transition-transform">
-            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </span>
-          <span class="absolute bottom-3 right-3 z-10 px-2 py-0.5 rounded-md text-xs font-semibold bg-black/55 text-white">共 8 节</span>
-        </div>
-        <div class="p-4">
-          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">生成式 AI 在课堂中的应用</h3>
-          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">从备课到课堂互动，探索大模型辅助教学新范式。</p>
-          <div class="mt-3 flex items-center gap-2 text-xs text-brand-800/50"><span class="px-2 py-0.5 rounded bg-brand-50 text-brand-600">教研专题</span><span>时长 3 小时</span></div>
-        </div>
-      </a>
-
-      <a href="course-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
-        <div class="cover cv8 aspect-video grid place-items-center">
-          <img src="assets/generated/jpg/ai-classroom-students.jpg" alt="跨学科融合的 AI 教学评价封面" class="cover-img" />
-          <span class="relative z-10 grid place-items-center w-14 h-14 rounded-full bg-white/25 backdrop-blur group-hover:scale-110 transition-transform">
-            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </span>
-          <span class="absolute bottom-3 right-3 z-10 px-2 py-0.5 rounded-md text-xs font-semibold bg-black/55 text-white">共 4 节</span>
-        </div>
-        <div class="p-4">
-          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">跨学科融合的 AI 教学评价</h3>
-          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">构建素养导向的过程性评价，让学习可见可测。</p>
-          <div class="mt-3 flex items-center gap-2 text-xs text-brand-800/50"><span class="px-2 py-0.5 rounded bg-brand-50 text-brand-600">名师工作室</span><span>时长 1 小时 40 分</span></div>
-        </div>
       </a>
     </div>
   </div>
@@ -522,65 +575,72 @@
   </div>
 </section>
 
-<!-- ============ AI 实验室 ============ -->
-<section id="lab" class="py-16 scroll-mt-20">
+<!-- ============ 赛事活动 ============ -->
+<section id="events" class="py-16 scroll-mt-20 bg-gradient-to-b from-white to-brand-50/40">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="reveal flex items-end justify-between gap-4 mb-8">
+    <div class="reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
       <div>
-        <h2 class="text-2xl sm:text-3xl font-black text-brand-900 flex items-center gap-2">AI 实验室
-          <span class="px-2 py-0.5 rounded-md text-xs font-bold bg-grass-500/15 text-grass-600 align-middle">在线 · 即点即用</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-brand-900 flex items-center gap-2">赛事活动
+          <span class="px-2 py-0.5 rounded-md text-xs font-bold bg-rose-100 text-rose-600 align-middle">报名进行中</span>
         </h2>
-        <p class="mt-2 text-brand-800/65">配套课程资源的实验内容，按课程包组织，点击进入查看包内在线实验</p>
+        <p class="mt-2 text-brand-800/65">面向全省中小学生的人工智能赛事，激发创新与实践，点击查看赛事详情并报名</p>
       </div>
-      <a href="#" class="hidden sm:inline text-sm text-brand-600 hover:text-brand-700 font-medium">全部课程包 ›</a>
+      <a href="events.html" class="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-white border border-brand-200 text-brand-700 font-semibold hover:bg-brand-50 transition-colors cursor-pointer shrink-0">查看全部赛事
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
 
     <div class="reveal grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- 课程包卡：年级+标题，内含 N 个在线实验 -->
-      <a href="lab-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
-        <div class="cover cv2 aspect-[16/7] grid place-items-center">
-          <img src="assets/generated/jpg/computer-vision-experiment.jpg" alt="小学三年级趣味图像识别实验包封面" class="cover-img" />
-          <svg class="w-10 h-10 text-white/85 relative z-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg>
-          <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-md text-xs font-bold bg-amber-400 text-amber-950">小学三年级</span>
+      <!-- 赛事卡 1 -->
+      <a href="event-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <div class="cover aspect-[16/9] grid place-items-center">
+          <img src="assets/generated/jpg/machine-learning-classroom.jpg" alt="湖南省中小学人工智能创新大赛封面" class="cover-img" />
+          <span class="absolute top-3 left-3 z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-bold bg-grass-500 text-white"><span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>报名中</span>
+          <span class="absolute bottom-3 right-3 z-10 px-2 py-0.5 rounded-md text-xs font-semibold bg-black/55 text-white">省级 · A 类</span>
         </div>
         <div class="p-4">
-          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">小学三年级 · 趣味图像识别</h3>
-          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">配套《奇妙的机器人世界》课程，动手训练你的第一个识别模型。</p>
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">湖南省中小学人工智能创新大赛</h3>
+          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">以真实问题为驱动，鼓励学生运用 AI 技术完成创意作品，设小学、初中、高中三个组别。</p>
+          <div class="mt-2 text-xs text-brand-800/50">报名截止 2026-08-15 · 全省中小学生</div>
           <div class="mt-3 flex items-center justify-between text-xs">
-            <span class="inline-flex items-center gap-1 text-grass-600 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-grass-500"></span>4 个在线实验</span>
-            <span class="text-brand-600 font-medium group-hover:translate-x-0.5 inline-flex items-center gap-1 transition-transform">进入实验 ›</span>
+            <span class="text-brand-800/55"><strong class="text-brand-700 text-sm">8,924</strong> 已报名</span>
+            <span class="text-brand-600 font-medium group-hover:translate-x-0.5 inline-flex items-center gap-1 transition-transform">立即报名 ›</span>
           </div>
         </div>
       </a>
 
-      <a href="lab-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
-        <div class="cover cv5 aspect-[16/7] grid place-items-center">
-          <img src="assets/generated/jpg/online-lab-interface.jpg" alt="初中二年级 Python 智能小程序实验包封面" class="cover-img" />
-          <svg class="w-10 h-10 text-white/85 relative z-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"/></svg>
-          <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-md text-xs font-bold bg-brand-500 text-white">初中二年级</span>
+      <!-- 赛事卡 2 -->
+      <a href="event-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <div class="cover aspect-[16/9] grid place-items-center">
+          <img src="assets/generated/jpg/python-coding.jpg" alt="青少年 AI 编程挑战赛封面" class="cover-img" />
+          <span class="absolute top-3 left-3 z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-bold bg-grass-500 text-white"><span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>报名中</span>
+          <span class="absolute bottom-3 right-3 z-10 px-2 py-0.5 rounded-md text-xs font-semibold bg-black/55 text-white">线上赛</span>
         </div>
         <div class="p-4">
-          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">初中二年级 · Python 智能小程序</h3>
-          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">在浏览器中编写 Python，完成聊天机器人、数据可视化等实验。</p>
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">青少年 AI 编程挑战赛</h3>
+          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">在线编程闯关，比拼算法思维与代码实现，全程线上完成，自动评测即时出分。</p>
+          <div class="mt-2 text-xs text-brand-800/50">报名截止 2026-09-30 · 初中 / 高中</div>
           <div class="mt-3 flex items-center justify-between text-xs">
-            <span class="inline-flex items-center gap-1 text-grass-600 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-grass-500"></span>6 个在线实验</span>
-            <span class="text-brand-600 font-medium group-hover:translate-x-0.5 inline-flex items-center gap-1 transition-transform">进入实验 ›</span>
+            <span class="text-brand-800/55"><strong class="text-brand-700 text-sm">6,312</strong> 已报名</span>
+            <span class="text-brand-600 font-medium group-hover:translate-x-0.5 inline-flex items-center gap-1 transition-transform">立即报名 ›</span>
           </div>
         </div>
       </a>
 
-      <a href="lab-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
-        <div class="cover cv3 aspect-[16/7] grid place-items-center">
-          <img src="assets/generated/jpg/machine-learning-classroom.jpg" alt="高中一年级机器学习实战实验包封面" class="cover-img" />
-          <svg class="w-10 h-10 text-white/85 relative z-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2"/></svg>
-          <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-md text-xs font-bold bg-grass-500 text-white">高中一年级</span>
+      <!-- 赛事卡 3 -->
+      <a href="event-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <div class="cover aspect-[16/9] grid place-items-center">
+          <img src="assets/generated/jpg/robotics-kit.jpg" alt="智能机器人创意竞赛封面" class="cover-img" />
+          <span class="absolute top-3 left-3 z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-bold bg-amber-400 text-amber-950">即将开始</span>
+          <span class="absolute bottom-3 right-3 z-10 px-2 py-0.5 rounded-md text-xs font-semibold bg-black/55 text-white">现场赛</span>
         </div>
         <div class="p-4">
-          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">高中一年级 · 机器学习实战</h3>
-          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">从数据集到模型训练，完整体验机器学习全流程实验。</p>
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">智能机器人创意竞赛</h3>
+          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">围绕真实场景任务设计并搭建智能机器人，考察工程实践与团队协作能力。</p>
+          <div class="mt-2 text-xs text-brand-800/50">报名开放 2026-10-08 · 全省中小学生</div>
           <div class="mt-3 flex items-center justify-between text-xs">
-            <span class="inline-flex items-center gap-1 text-grass-600 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-grass-500"></span>5 个在线实验</span>
-            <span class="text-brand-600 font-medium group-hover:translate-x-0.5 inline-flex items-center gap-1 transition-transform">进入实验 ›</span>
+            <span class="text-brand-800/55">敬请期待</span>
+            <span class="text-brand-600 font-medium group-hover:translate-x-0.5 inline-flex items-center gap-1 transition-transform">查看详情 ›</span>
           </div>
         </div>
       </a>
@@ -589,7 +649,7 @@
 </section>
 
 <!-- ============ 入驻/行动号召 ============ -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
+<section class="max-w-7xl mx-auto px-4 sm:px-6 pb-16 pt-4">
   <div class="reveal rounded-3xl bg-gradient-to-br from-brand-600 to-brand-800 text-white px-8 py-12 sm:px-12 text-center shadow-card relative overflow-hidden">
     <div class="pointer-events-none absolute -top-16 -right-10 w-64 h-64 rounded-full bg-white/10 blur-2xl"></div>
     <h2 class="text-2xl sm:text-3xl font-black relative">注册账号，解锁全部学习资源</h2>
@@ -619,10 +679,9 @@
     <div class="md:col-span-2">
       <h4 class="font-bold text-white mb-4">资源中心</h4>
       <ul class="space-y-2.5 text-sm text-brand-200/75">
-        <li><a href="#courses" class="hover:text-white transition-colors">课程资源</a></li>
-        <li><a href="#research" class="hover:text-white transition-colors">教研中心</a></li>
+        <li><a href="courses.html" class="hover:text-white transition-colors">课程资源</a></li>
         <li><a href="#training" class="hover:text-white transition-colors">师训中心</a></li>
-        <li><a href="#lab" class="hover:text-white transition-colors">AI 实验室</a></li>
+        <li><a href="events.html" class="hover:text-white transition-colors">赛事活动</a></li>
       </ul>
     </div>
 
@@ -701,18 +760,66 @@
 
 <!-- ============ 下载弹窗 ============ -->
 <div id="downloadModal" class="hidden fixed inset-0 z-50">
-  <div class="absolute inset-0 bg-brand-900/50 backdrop-blur-sm" onclick="closeDownload()"></div>
+  <div class="absolute inset-0 bg-brand-900/60 backdrop-blur-sm" onclick="closeDownload()"></div>
   <div class="relative min-h-full grid place-items-center p-4">
     <div class="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden" role="dialog" aria-modal="true" aria-labelledby="downloadTitle">
-      <div class="bg-gradient-to-br from-brand-500 to-brand-700 px-7 py-7 text-white relative">
-        <button onclick="closeDownload()" class="absolute top-4 right-4 grid place-items-center w-9 h-9 rounded-lg hover:bg-white/15 transition-colors cursor-pointer" aria-label="关闭">
+      <!-- 头部 -->
+      <div class="relative bg-gradient-to-br from-brand-600 to-brand-800 px-8 py-9 text-white overflow-hidden">
+        <div class="pointer-events-none absolute -top-16 -right-10 w-56 h-56 rounded-full bg-brand-400/25 blur-3xl"></div>
+        <div class="pointer-events-none absolute -bottom-20 -left-12 w-56 h-56 rounded-full bg-grass-400/20 blur-3xl"></div>
+        <button onclick="closeDownload()" class="absolute top-5 right-5 z-10 grid place-items-center w-9 h-9 rounded-lg hover:bg-white/15 transition-colors cursor-pointer" aria-label="关闭">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
-        <h3 id="downloadTitle" class="text-xl font-black">客户端下载</h3>
-        <p class="text-sm text-white/80 mt-1">湖南省中小学人工智能通识教育平台</p>
+        <div class="relative flex flex-col items-center text-center gap-3">
+          <span class="grid place-items-center w-16 h-16 rounded-2xl bg-white/15 backdrop-blur ring-1 ring-white/30 shrink-0">
+            <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3 3 3 0 0 0-3 3 3 3 0 0 0 0 6 3 3 0 0 0 3 3 3 3 0 0 0 6 0 3 3 0 0 0 3-3 3 3 0 0 0 0-6 3 3 0 0 0-3-3 3 3 0 0 0-3-3Z"/><path d="M12 8v8M9 12h6"/></svg>
+          </span>
+          <div>
+            <p class="text-xs font-semibold tracking-[.2em] text-brand-200">CLIENT DOWNLOAD</p>
+            <h3 id="downloadTitle" class="mt-1 text-2xl font-black leading-tight">人工智能通识教育平台</h3>
+            <p class="mt-1 text-sm text-white/75">授课客户端 · 支持 macOS 与 Windows 双平台</p>
+          </div>
+        </div>
       </div>
-      <div class="p-7 text-center text-brand-800/70">
-        <p>下载内容即将上线，敬请期待。</p>
+
+      <!-- 内容 -->
+      <div class="p-6">
+        <div class="grid grid-cols-1 gap-3">
+          <a href="#" class="group relative flex items-center gap-4 p-5 rounded-2xl border border-brand-100 bg-white hover:bg-gradient-to-br hover:from-brand-600 hover:to-brand-700 hover:border-transparent hover:shadow-xl transition-all cursor-pointer">
+            <svg class="w-10 h-10 text-brand-700 group-hover:text-white shrink-0 transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+            <div class="min-w-0">
+              <div class="text-base font-bold text-brand-900 group-hover:text-white transition-colors">macOS 版</div>
+              <div class="text-xs text-brand-800/50 group-hover:text-white/75 mt-0.5 transition-colors">Apple 芯片 / Intel · .dmg</div>
+            </div>
+            <span class="ml-auto shrink-0 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-brand-600 text-white text-sm font-bold shadow-card opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 group-hover:bg-white group-hover:text-brand-700 transition-all duration-200"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>下载</span>
+          </a>
+          <a href="#" class="group relative flex items-center gap-4 p-5 rounded-2xl border border-brand-100 bg-white hover:bg-gradient-to-br hover:from-brand-600 hover:to-brand-700 hover:border-transparent hover:shadow-xl transition-all cursor-pointer">
+            <svg class="w-10 h-10 text-brand-700 group-hover:text-white shrink-0 transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.1 10 4.02V11H3V5.1zM10.99 3.88 21 2.4V11h-10.01V3.88zM3 13h7v6.98L3 18.9V13zm7.99 0H21v8.6l-10.01-1.48V13z"/></svg>
+            <div class="min-w-0">
+              <div class="text-base font-bold text-brand-900 group-hover:text-white transition-colors">Windows 版</div>
+              <div class="text-xs text-brand-800/50 group-hover:text-white/75 mt-0.5 transition-colors">Windows 10 / 11 · .exe</div>
+            </div>
+            <span class="ml-auto shrink-0 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-brand-600 text-white text-sm font-bold shadow-card opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 group-hover:bg-white group-hover:text-brand-700 transition-all duration-200"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>下载</span>
+          </a>
+        </div>
+
+        <div class="mt-8">
+          <div class="flex items-center gap-3 mb-5"><span class="h-px flex-1 bg-brand-100"></span><span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-brand-600 to-brand-700 text-white text-base font-black shadow-card shrink-0"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>三步开始上课</span><span class="h-px flex-1 bg-brand-100"></span></div>
+          <div class="grid grid-cols-1 gap-3">
+            <div class="group relative flex items-center gap-4 rounded-2xl border-2 border-brand-100 bg-gradient-to-b from-brand-50/70 to-white p-4 hover:border-brand-400 hover:shadow-card transition-all">
+              <span class="grid place-items-center w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-white text-xl font-black shadow-card ring-4 ring-brand-100 group-hover:scale-105 transition-transform">1</span>
+              <p class="text-sm text-brand-800/85 leading-relaxed font-medium">手机号注册，选择对应<strong class="text-brand-900 font-semibold">学校</strong>，获取全部课程使用权限</p>
+            </div>
+            <div class="group relative flex items-center gap-4 rounded-2xl border-2 border-brand-100 bg-gradient-to-b from-brand-50/70 to-white p-4 hover:border-brand-400 hover:shadow-card transition-all">
+              <span class="grid place-items-center w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-white text-xl font-black shadow-card ring-4 ring-brand-100 group-hover:scale-105 transition-transform">2</span>
+              <p class="text-sm text-brand-800/85 leading-relaxed font-medium">创建班级，在对应班级中<strong class="text-brand-900 font-semibold">添加对应年级</strong>的课程</p>
+            </div>
+            <div class="group relative flex items-center gap-4 rounded-2xl border-2 border-brand-100 bg-gradient-to-b from-brand-50/70 to-white p-4 hover:border-brand-400 hover:shadow-card transition-all">
+              <span class="grid place-items-center w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-white text-xl font-black shadow-card ring-4 ring-brand-100 group-hover:scale-105 transition-transform">3</span>
+              <p class="text-sm text-brand-800/85 leading-relaxed font-medium">进入班级，<strong class="text-brand-900 font-semibold">开始上课</strong></p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -752,6 +859,32 @@
     window.addEventListener('scroll', onScroll, { passive:true });
     window.addEventListener('resize', onScroll);
     onScroll();
+  })();
+
+  // 课程资源学段筛选（按年级顺序保持 DOM 原序）
+  (function(){
+    const wrap = document.getElementById('courseFilter');
+    if(!wrap) return;
+    const tabs = wrap.querySelectorAll('.cf-tab');
+    const cards = document.querySelectorAll('#courseGrid .course-card');
+    const empty = document.getElementById('courseEmpty');
+    const ROW = 4; // 一行卡片数（lg）
+    function apply(f){
+      let shown = 0;
+      cards.forEach((c,i)=>{
+        // 「全部」默认仅显示首行；筛选具体学段时展示该学段全部
+        const ok = f==='all' ? i < ROW : c.dataset.stage===f;
+        c.classList.toggle('hidden', !ok);
+        if(ok) shown++;
+      });
+      empty.classList.toggle('hidden', shown>0);
+    }
+    tabs.forEach(btn=>btn.addEventListener('click',()=>{
+      tabs.forEach(t=>{ t.classList.remove('bg-brand-600','text-white'); t.classList.add('bg-white','border','border-brand-100','text-brand-700'); });
+      btn.classList.add('bg-brand-600','text-white'); btn.classList.remove('bg-white','border','border-brand-100','text-brand-700');
+      apply(btn.dataset.ef);
+    }));
+    apply('all'); // 初始：默认一行
   })();
 </script>
 </body>

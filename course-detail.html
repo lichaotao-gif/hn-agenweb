@@ -22,7 +22,7 @@
 
   .cover-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
   .cover::after { z-index:1; }
-  .cover > :not(.cover-img) { position:relative; z-index:10; }
+  .cover > :not(.cover-img):not(.absolute) { position:relative; z-index:10; } .cover > .absolute { z-index:10; }
 
   .lift{transition:transform .2s,box-shadow .2s,border-color .2s;} .lift:hover{transform:translateY(-4px);box-shadow:0 18px 40px -12px rgba(8,145,178,.30);}
   @media (prefers-reduced-motion:reduce){.lift{transition:none!important;transform:none!important;} html{scroll-behavior:auto;}}
@@ -41,10 +41,10 @@
     </a>
     <ul class="hidden lg:flex items-center gap-1 text-[15px] font-medium">
       <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="index.html">首页</a></li>
-      <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="index.html#courses">课程资源</a></li>
-      <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="index.html#research">教研中心</a></li>
+      <li><a class="px-3 py-2 rounded-lg bg-brand-50 text-brand-700 font-semibold transition-colors" href="courses.html">课程资源</a></li>
       <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="index.html#training">师训中心</a></li>
-      <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="index.html#lab">AI实验室</a></li>
+      <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="events.html">赛事活动</a></li>
+      <li><button onclick="openDownload()" class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors cursor-pointer">下载</button></li>
     </ul>
     <a href="index.html" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-brand-700 font-medium hover:bg-brand-50 transition-colors">
       <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7M19 12H5"/></svg>返回首页
@@ -56,7 +56,7 @@
   <!-- 面包屑 -->
   <nav class="text-sm text-brand-800/60 mb-5 flex items-center gap-2 flex-wrap">
     <a href="index.html" class="hover:text-brand-600">首页</a><span>/</span>
-    <a href="index.html#courses" class="hover:text-brand-600">课程资源</a><span>/</span>
+    <a href="courses.html" class="hover:text-brand-600">课程资源</a><span>/</span>
     <span class="text-brand-800">Python 编程入门</span>
   </nav>
 
@@ -69,7 +69,7 @@
         <button class="group grid place-items-center w-20 h-20 rounded-full bg-white/25 backdrop-blur hover:bg-white/35 transition-colors cursor-pointer" aria-label="播放视频">
           <svg class="w-9 h-9 text-white group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         </button>
-        <span class="absolute bottom-4 left-4 text-white/90 text-sm font-medium">第 1 节 · 认识 Python 与编程思维</span>
+        <span id="playerCaption" class="absolute bottom-4 left-4 text-white/90 text-sm font-medium">第 1 节 · 认识 Python 与编程思维</span>
       </div>
 
       <!-- 标题信息 -->
@@ -77,22 +77,29 @@
         <div class="flex items-center gap-2 flex-wrap">
           <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-brand-500 text-white">初中</span>
           <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-brand-50 text-brand-600">信息技术</span>
-          <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-grass-500/15 text-grass-600">配套实验</span>
+          <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-grass-500/15 text-grass-600">双师 AI 课</span>
         </div>
         <h1 class="mt-3 text-2xl sm:text-3xl font-black text-brand-900">Python 编程入门</h1>
         <div class="mt-3 flex items-center gap-5 text-sm text-brand-800/60">
-          <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3 12 7 8 3"/></svg>20 课时</span>
-          <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>5.2万 人学习</span>
-          <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>更新于 2026-06</span>
+          <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3 12 7 8 3"/></svg>共 7 课时</span>
         </div>
       </div>
 
-      <!-- 资源介绍 -->
+      <!-- 课时介绍（随右侧课时切换） -->
+      <section class="bg-white rounded-2xl shadow-card border border-brand-100 p-6">
+        <div class="flex items-center justify-between gap-3 mb-3">
+          <h2 id="lessonTitle" class="text-lg font-black text-brand-900">第 1 节 · 认识 Python 与编程思维</h2>
+          <span id="lessonDur" class="text-xs text-brand-800/55 shrink-0">时长 12:30</span>
+        </div>
+        <p id="lessonIntro" class="text-brand-800/80 leading-relaxed">本节带你认识 Python 语言与编程的基本思想，了解代码如何驱动计算机完成任务，建立学习信心。</p>
+      </section>
+
+      <!-- 课程介绍（整体，放在课时介绍下方） -->
       <section class="bg-white rounded-2xl shadow-card border border-brand-100 p-6">
         <h2 class="text-lg font-black text-brand-900 mb-3">课程介绍</h2>
         <div class="space-y-3 text-brand-800/80 leading-relaxed">
-          <p>本课程面向初中阶段零基础学生，以 Python 语言为载体，从最基础的变量、循环、函数讲起，逐步引导学生用代码解决真实问题。课程配套 AI 实验室在线实验，学完即可动手实践。</p>
-          <p>课程注重计算思维的培养，每一节都配有课堂任务与拓展挑战，帮助学生在「做中学」，建立对人工智能与编程的兴趣和信心。</p>
+          <p>本课程面向初中阶段零基础学生，以 Python 语言为载体，从最基础的变量、循环、函数讲起，逐步引导学生用代码解决真实问题。</p>
+          <p>课程采用双师 AI 课模式，注重计算思维的培养，每一节都配有课堂任务与拓展挑战，帮助学生在「做中学」，建立对人工智能与编程的兴趣和信心。</p>
         </div>
         <h3 class="mt-5 mb-2 font-bold text-brand-900">你将学到</h3>
         <ul class="grid sm:grid-cols-2 gap-2 text-sm text-brand-800/80">
@@ -109,43 +116,41 @@
       <div class="bg-white rounded-2xl shadow-card border border-brand-100 overflow-hidden lg:sticky lg:top-20">
         <div class="px-5 py-4 border-b border-brand-50 flex items-center justify-between">
           <h2 class="font-black text-brand-900">课程目录</h2>
-          <span class="text-sm text-brand-800/55">共 20 节</span>
+          <span class="text-sm text-brand-800/55">共 7 节</span>
         </div>
-        <ol class="max-h-[560px] overflow-y-auto divide-y divide-brand-50">
-          <!-- 当前播放 -->
-          <li class="flex items-center gap-3 px-5 py-3.5 bg-brand-50/70 cursor-pointer">
-            <span class="grid place-items-center w-8 h-8 rounded-lg bg-brand-600 text-white text-sm font-bold shrink-0">1</span>
-            <div class="flex-1 min-w-0"><div class="text-sm font-semibold text-brand-700 truncate">认识 Python 与编程思维</div><div class="text-xs text-brand-800/50">正在播放 · 12:30</div></div>
-            <svg class="w-4 h-4 text-brand-600 shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <ol id="lessonList" class="max-h-[520px] overflow-y-auto divide-y divide-brand-50">
+          <li data-n="1" data-title="认识 Python 与编程思维" data-dur="12:30" data-intro="本节带你认识 Python 语言与编程的基本思想，了解代码如何驱动计算机完成任务，建立学习信心。" class="lesson-item flex items-center gap-3 px-5 py-3.5 cursor-pointer transition-colors">
+            <span class="lesson-badge grid place-items-center w-8 h-8 rounded-lg text-sm font-bold shrink-0">1</span>
+            <div class="flex-1 min-w-0"><div class="lesson-name text-sm font-medium truncate">认识 Python 与编程思维</div><div class="lesson-sub text-xs text-brand-800/50">12:30</div></div>
           </li>
-          <li class="flex items-center gap-3 px-5 py-3.5 hover:bg-brand-50/50 transition-colors cursor-pointer">
-            <span class="grid place-items-center w-8 h-8 rounded-lg bg-brand-50 text-brand-600 text-sm font-bold shrink-0">2</span>
-            <div class="flex-1 min-w-0"><div class="text-sm font-medium text-brand-900 truncate">变量与数据类型</div><div class="text-xs text-brand-800/50">15:08</div></div>
+          <li data-n="2" data-title="变量与数据类型" data-dur="15:08" data-intro="学习变量的概念与常见数据类型（整数、浮点、字符串、布尔），掌握赋值与基本运算。" class="lesson-item flex items-center gap-3 px-5 py-3.5 cursor-pointer transition-colors">
+            <span class="lesson-badge grid place-items-center w-8 h-8 rounded-lg text-sm font-bold shrink-0">2</span>
+            <div class="flex-1 min-w-0"><div class="lesson-name text-sm font-medium truncate">变量与数据类型</div><div class="lesson-sub text-xs text-brand-800/50">15:08</div></div>
           </li>
-          <li class="flex items-center gap-3 px-5 py-3.5 hover:bg-brand-50/50 transition-colors cursor-pointer">
-            <span class="grid place-items-center w-8 h-8 rounded-lg bg-brand-50 text-brand-600 text-sm font-bold shrink-0">3</span>
-            <div class="flex-1 min-w-0"><div class="text-sm font-medium text-brand-900 truncate">条件判断 if-else</div><div class="text-xs text-brand-800/50">13:42</div></div>
+          <li data-n="3" data-title="条件判断 if-else" data-dur="13:42" data-intro="通过 if-else 让程序学会「判断」，根据不同条件执行不同分支，解决实际问题。" class="lesson-item flex items-center gap-3 px-5 py-3.5 cursor-pointer transition-colors">
+            <span class="lesson-badge grid place-items-center w-8 h-8 rounded-lg text-sm font-bold shrink-0">3</span>
+            <div class="flex-1 min-w-0"><div class="lesson-name text-sm font-medium truncate">条件判断 if-else</div><div class="lesson-sub text-xs text-brand-800/50">13:42</div></div>
           </li>
-          <li class="flex items-center gap-3 px-5 py-3.5 hover:bg-brand-50/50 transition-colors cursor-pointer">
-            <span class="grid place-items-center w-8 h-8 rounded-lg bg-brand-50 text-brand-600 text-sm font-bold shrink-0">4</span>
-            <div class="flex-1 min-w-0"><div class="text-sm font-medium text-brand-900 truncate">循环结构 for / while</div><div class="text-xs text-brand-800/50">16:20</div></div>
+          <li data-n="4" data-title="循环结构 for / while" data-dur="16:20" data-intro="掌握 for 与 while 循环，让重复的工作交给程序自动完成，提升效率。" class="lesson-item flex items-center gap-3 px-5 py-3.5 cursor-pointer transition-colors">
+            <span class="lesson-badge grid place-items-center w-8 h-8 rounded-lg text-sm font-bold shrink-0">4</span>
+            <div class="flex-1 min-w-0"><div class="lesson-name text-sm font-medium truncate">循环结构 for / while</div><div class="lesson-sub text-xs text-brand-800/50">16:20</div></div>
           </li>
-          <li class="flex items-center gap-3 px-5 py-3.5 hover:bg-brand-50/50 transition-colors cursor-pointer">
-            <span class="grid place-items-center w-8 h-8 rounded-lg bg-brand-50 text-brand-600 text-sm font-bold shrink-0">5</span>
-            <div class="flex-1 min-w-0"><div class="text-sm font-medium text-brand-900 truncate">函数与模块化</div><div class="text-xs text-brand-800/50">18:55</div></div>
+          <li data-n="5" data-title="函数与模块化" data-dur="18:55" data-intro="学习把代码封装成函数与模块，让程序结构更清晰、更易复用。" class="lesson-item flex items-center gap-3 px-5 py-3.5 cursor-pointer transition-colors">
+            <span class="lesson-badge grid place-items-center w-8 h-8 rounded-lg text-sm font-bold shrink-0">5</span>
+            <div class="flex-1 min-w-0"><div class="lesson-name text-sm font-medium truncate">函数与模块化</div><div class="lesson-sub text-xs text-brand-800/50">18:55</div></div>
           </li>
-          <li class="flex items-center gap-3 px-5 py-3.5 hover:bg-brand-50/50 transition-colors cursor-pointer">
-            <span class="grid place-items-center w-8 h-8 rounded-lg bg-brand-50 text-brand-600 text-sm font-bold shrink-0">6</span>
-            <div class="flex-1 min-w-0"><div class="text-sm font-medium text-brand-900 truncate">列表与字典</div><div class="text-xs text-brand-800/50">17:10</div></div>
+          <li data-n="6" data-title="列表与字典" data-dur="17:10" data-intro="认识列表与字典两种常用数据结构，学会组织和管理批量数据。" class="lesson-item flex items-center gap-3 px-5 py-3.5 cursor-pointer transition-colors">
+            <span class="lesson-badge grid place-items-center w-8 h-8 rounded-lg text-sm font-bold shrink-0">6</span>
+            <div class="flex-1 min-w-0"><div class="lesson-name text-sm font-medium truncate">列表与字典</div><div class="lesson-sub text-xs text-brand-800/50">17:10</div></div>
           </li>
-          <li class="flex items-center gap-3 px-5 py-3.5 hover:bg-brand-50/50 transition-colors cursor-pointer">
-            <span class="grid place-items-center w-8 h-8 rounded-lg bg-brand-50 text-brand-600 text-sm font-bold shrink-0">7</span>
-            <div class="flex-1 min-w-0"><div class="text-sm font-medium text-brand-900 truncate">综合项目：智能问答小助手</div><div class="text-xs text-brand-800/50">22:36</div></div>
+          <li data-n="7" data-title="综合项目：智能问答小助手" data-dur="22:36" data-intro="综合运用所学知识，动手实现一个能问答的智能小助手，巩固整章内容。" class="lesson-item flex items-center gap-3 px-5 py-3.5 cursor-pointer transition-colors">
+            <span class="lesson-badge grid place-items-center w-8 h-8 rounded-lg text-sm font-bold shrink-0">7</span>
+            <div class="flex-1 min-w-0"><div class="lesson-name text-sm font-medium truncate">综合项目：智能问答小助手</div><div class="lesson-sub text-xs text-brand-800/50">22:36</div></div>
           </li>
         </ol>
         <div class="p-4 border-t border-brand-50">
-          <a href="lab-detail.html" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-grass-500 hover:bg-grass-600 text-white font-semibold transition-colors cursor-pointer">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg>前往配套在线实验
+          <a href="#" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold transition-colors cursor-pointer">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>前往下载授课客户端
           </a>
         </div>
       </div>
@@ -156,5 +161,107 @@
 <footer class="bg-brand-900 text-brand-200/60 mt-10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 text-center text-xs">© 2026 湖南省中小学人工智能通识教育平台　主办单位：湖南省教育厅</div>
 </footer>
+
+<script>
+  // 课时切换：点击右侧目录 -> 更新播放器标题与课时介绍
+  (function(){
+    const items = document.querySelectorAll('#lessonList .lesson-item');
+    const caption = document.getElementById('playerCaption');
+    const lTitle = document.getElementById('lessonTitle');
+    const lDur = document.getElementById('lessonDur');
+    const lIntro = document.getElementById('lessonIntro');
+    function activate(li){
+      items.forEach(it=>{
+        const on = it===li;
+        it.classList.toggle('bg-brand-50/70', on);
+        const badge = it.querySelector('.lesson-badge');
+        const name = it.querySelector('.lesson-name');
+        const sub = it.querySelector('.lesson-sub');
+        badge.className = 'lesson-badge grid place-items-center w-8 h-8 rounded-lg text-sm font-bold shrink-0 ' + (on ? 'bg-brand-600 text-white' : 'bg-brand-50 text-brand-600');
+        name.className = 'lesson-name text-sm truncate ' + (on ? 'font-semibold text-brand-700' : 'font-medium text-brand-900');
+        sub.textContent = (on ? '正在播放 · ' : '') + it.dataset.dur;
+        if(!on) it.classList.add('hover:bg-brand-50/50');
+        else it.classList.remove('hover:bg-brand-50/50');
+      });
+      const n = li.dataset.n, t = li.dataset.title;
+      caption.textContent = `第 ${n} 节 · ${t}`;
+      lTitle.textContent = `第 ${n} 节 · ${t}`;
+      lDur.textContent = `时长 ${li.dataset.dur}`;
+      lIntro.textContent = li.dataset.intro;
+    }
+    items.forEach(li=>li.addEventListener('click',()=>activate(li)));
+    if(items[0]) activate(items[0]);
+  })();
+</script>
+<div id="downloadModal" class="hidden fixed inset-0 z-50">
+  <div class="absolute inset-0 bg-brand-900/60 backdrop-blur-sm" onclick="closeDownload()"></div>
+  <div class="relative min-h-full grid place-items-center p-4">
+    <div class="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden" role="dialog" aria-modal="true" aria-labelledby="downloadTitle">
+      <!-- 头部 -->
+      <div class="relative bg-gradient-to-br from-brand-600 to-brand-800 px-8 py-9 text-white overflow-hidden">
+        <div class="pointer-events-none absolute -top-16 -right-10 w-56 h-56 rounded-full bg-brand-400/25 blur-3xl"></div>
+        <div class="pointer-events-none absolute -bottom-20 -left-12 w-56 h-56 rounded-full bg-grass-400/20 blur-3xl"></div>
+        <button onclick="closeDownload()" class="absolute top-5 right-5 z-10 grid place-items-center w-9 h-9 rounded-lg hover:bg-white/15 transition-colors cursor-pointer" aria-label="关闭">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="relative flex flex-col items-center text-center gap-3">
+          <span class="grid place-items-center w-16 h-16 rounded-2xl bg-white/15 backdrop-blur ring-1 ring-white/30 shrink-0">
+            <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3 3 3 0 0 0-3 3 3 3 0 0 0 0 6 3 3 0 0 0 3 3 3 3 0 0 0 6 0 3 3 0 0 0 3-3 3 3 0 0 0 0-6 3 3 0 0 0-3-3 3 3 0 0 0-3-3Z"/><path d="M12 8v8M9 12h6"/></svg>
+          </span>
+          <div>
+            <p class="text-xs font-semibold tracking-[.2em] text-brand-200">CLIENT DOWNLOAD</p>
+            <h3 id="downloadTitle" class="mt-1 text-2xl font-black leading-tight">人工智能通识教育平台</h3>
+            <p class="mt-1 text-sm text-white/75">授课客户端 · 支持 macOS 与 Windows 双平台</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 内容 -->
+      <div class="p-6">
+        <div class="grid grid-cols-1 gap-3">
+          <a href="#" class="group relative flex items-center gap-4 p-5 rounded-2xl border border-brand-100 bg-white hover:bg-gradient-to-br hover:from-brand-600 hover:to-brand-700 hover:border-transparent hover:shadow-xl transition-all cursor-pointer">
+            <svg class="w-10 h-10 text-brand-700 group-hover:text-white shrink-0 transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+            <div class="min-w-0">
+              <div class="text-base font-bold text-brand-900 group-hover:text-white transition-colors">macOS 版</div>
+              <div class="text-xs text-brand-800/50 group-hover:text-white/75 mt-0.5 transition-colors">Apple 芯片 / Intel · .dmg</div>
+            </div>
+            <span class="ml-auto shrink-0 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-brand-600 text-white text-sm font-bold shadow-card opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 group-hover:bg-white group-hover:text-brand-700 transition-all duration-200"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>下载</span>
+          </a>
+          <a href="#" class="group relative flex items-center gap-4 p-5 rounded-2xl border border-brand-100 bg-white hover:bg-gradient-to-br hover:from-brand-600 hover:to-brand-700 hover:border-transparent hover:shadow-xl transition-all cursor-pointer">
+            <svg class="w-10 h-10 text-brand-700 group-hover:text-white shrink-0 transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.1 10 4.02V11H3V5.1zM10.99 3.88 21 2.4V11h-10.01V3.88zM3 13h7v6.98L3 18.9V13zm7.99 0H21v8.6l-10.01-1.48V13z"/></svg>
+            <div class="min-w-0">
+              <div class="text-base font-bold text-brand-900 group-hover:text-white transition-colors">Windows 版</div>
+              <div class="text-xs text-brand-800/50 group-hover:text-white/75 mt-0.5 transition-colors">Windows 10 / 11 · .exe</div>
+            </div>
+            <span class="ml-auto shrink-0 inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-brand-600 text-white text-sm font-bold shadow-card opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 group-hover:bg-white group-hover:text-brand-700 transition-all duration-200"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>下载</span>
+          </a>
+        </div>
+
+        <div class="mt-8">
+          <div class="flex items-center gap-3 mb-5"><span class="h-px flex-1 bg-brand-100"></span><span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-brand-600 to-brand-700 text-white text-base font-black shadow-card shrink-0"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>三步开始上课</span><span class="h-px flex-1 bg-brand-100"></span></div>
+          <div class="grid grid-cols-1 gap-3">
+            <div class="group relative flex items-center gap-4 rounded-2xl border-2 border-brand-100 bg-gradient-to-b from-brand-50/70 to-white p-4 hover:border-brand-400 hover:shadow-card transition-all">
+              <span class="grid place-items-center w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-white text-xl font-black shadow-card ring-4 ring-brand-100 group-hover:scale-105 transition-transform">1</span>
+              <p class="text-sm text-brand-800/85 leading-relaxed font-medium">手机号注册，选择对应<strong class="text-brand-900 font-semibold">学校</strong>，获取全部课程使用权限</p>
+            </div>
+            <div class="group relative flex items-center gap-4 rounded-2xl border-2 border-brand-100 bg-gradient-to-b from-brand-50/70 to-white p-4 hover:border-brand-400 hover:shadow-card transition-all">
+              <span class="grid place-items-center w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-white text-xl font-black shadow-card ring-4 ring-brand-100 group-hover:scale-105 transition-transform">2</span>
+              <p class="text-sm text-brand-800/85 leading-relaxed font-medium">创建班级，在对应班级中<strong class="text-brand-900 font-semibold">添加对应年级</strong>的课程</p>
+            </div>
+            <div class="group relative flex items-center gap-4 rounded-2xl border-2 border-brand-100 bg-gradient-to-b from-brand-50/70 to-white p-4 hover:border-brand-400 hover:shadow-card transition-all">
+              <span class="grid place-items-center w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-white text-xl font-black shadow-card ring-4 ring-brand-100 group-hover:scale-105 transition-transform">3</span>
+              <p class="text-sm text-brand-800/85 leading-relaxed font-medium">进入班级，<strong class="text-brand-900 font-semibold">开始上课</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function openDownload(){ const m=document.getElementById('downloadModal'); m.classList.remove('hidden'); document.body.style.overflow='hidden'; }
+  function closeDownload(){ document.getElementById('downloadModal').classList.add('hidden'); document.body.style.overflow=''; }
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDownload(); });
+</script>
 </body>
 </html>
