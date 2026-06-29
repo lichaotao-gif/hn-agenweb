@@ -80,8 +80,8 @@
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
     <!-- Logo -->
     <a href="#top" class="flex items-center gap-2.5 shrink-0">
-      <span class="grid place-items-center w-10 h-10 rounded-xl bg-gradient-to-br from-brand-400 to-brand-600 text-white shadow-card">
-        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3 3 3 0 0 0-3 3 3 3 0 0 0 0 6 3 3 0 0 0 3 3 3 3 0 0 0 6 0 3 3 0 0 0 3-3 3 3 0 0 0 0-6 3 3 0 0 0-3-3 3 3 0 0 0-3-3Z"/><path d="M12 8v8M9 12h6"/></svg>
+      <span class="w-10 h-10 shrink-0">
+        <img src="assets/logo.svg" alt="人工智能通识教育平台标识" class="w-full h-full" />
       </span>
       <span class="leading-tight">
         <span class="block font-black text-[15px] sm:text-base text-brand-900">湖南省中小学人工智能通识教育平台</span>
@@ -99,11 +99,6 @@
     </ul>
 
     <div class="flex items-center gap-2 shrink-0">
-      <button onclick="openLogin()" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-brand-700 font-medium hover:bg-brand-50 transition-colors cursor-pointer">
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        登录
-      </button>
-      <button onclick="openLogin()" class="inline-flex items-center px-4 py-2 rounded-lg bg-grass-500 hover:bg-grass-600 text-white font-semibold shadow-card transition-colors cursor-pointer">注册</button>
       <!-- mobile menu btn -->
       <button onclick="toggleMobile()" class="lg:hidden grid place-items-center w-10 h-10 rounded-lg text-brand-700 hover:bg-brand-50 cursor-pointer" aria-label="打开菜单">
         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -117,7 +112,6 @@
     <a class="block px-3 py-2 rounded-lg hover:bg-brand-50" href="#training" onclick="toggleMobile()">师训中心</a>
     <a class="block px-3 py-2 rounded-lg hover:bg-brand-50" href="events.html" onclick="toggleMobile()">赛事活动</a>
     <button onclick="openDownload();toggleMobile()" class="w-full text-left px-3 py-2 rounded-lg hover:bg-brand-50 cursor-pointer">下载</button>
-    <button onclick="openLogin();toggleMobile()" class="w-full text-left px-3 py-2 rounded-lg hover:bg-brand-50 cursor-pointer">登录 / 注册</button>
   </div>
 </header>
 
@@ -628,18 +622,18 @@
       </a>
 
       <!-- 赛事卡 3 -->
-      <a href="event-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+      <a href="event-robotics-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
         <div class="cover aspect-[16/9] grid place-items-center">
-          <img src="assets/generated/jpg/robotics-kit.jpg" alt="智能机器人创意竞赛封面" class="cover-img" />
-          <span class="absolute top-3 left-3 z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-bold bg-amber-400 text-amber-950">即将开始</span>
-          <span class="absolute bottom-3 right-3 z-10 px-2 py-0.5 rounded-md text-xs font-semibold bg-black/55 text-white">现场赛</span>
+          <img src="assets/generated/jpg/robotics-kit.jpg" alt="2026世界机器人大赛湖南选拔赛封面" class="cover-img" />
+          <span class="absolute top-3 left-3 z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-bold bg-grass-500 text-white"><span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>报名中</span>
+          <span class="absolute bottom-3 right-3 z-10 px-2 py-0.5 rounded-md text-xs font-semibold bg-black/55 text-white">湖南选拔赛</span>
         </div>
         <div class="p-4">
-          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">智能机器人创意竞赛</h3>
-          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">围绕真实场景任务设计并搭建智能机器人，考察工程实践与团队协作能力。</p>
-          <div class="mt-2 text-xs text-brand-800/50">报名开放 2026-10-08 · 全省中小学生</div>
+          <h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">2026世界机器人大赛湖南选拔赛</h3>
+          <p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">AI创无界·荣耀无界，设置具身智能、智慧设计与 UAV 地空协同等机器人竞技方向。</p>
+          <div class="mt-2 text-xs text-brand-800/50">2026-07-19 · 长沙市开福区第一小学</div>
           <div class="mt-3 flex items-center justify-between text-xs">
-            <span class="text-brand-800/55">敬请期待</span>
+            <span class="text-brand-800/55">湖南选拔赛</span>
             <span class="text-brand-600 font-medium group-hover:translate-x-0.5 inline-flex items-center gap-1 transition-transform">查看详情 ›</span>
           </div>
         </div>
@@ -668,8 +662,8 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid gap-10 md:grid-cols-12">
     <div class="md:col-span-4">
       <div class="flex items-center gap-2.5">
-        <span class="grid place-items-center w-10 h-10 rounded-xl bg-gradient-to-br from-brand-400 to-brand-600 text-white">
-          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3 3 3 0 0 0-3 3 3 3 0 0 0 0 6 3 3 0 0 0 3 3 3 3 0 0 0 6 0 3 3 0 0 0 3-3 3 3 0 0 0 0-6 3 3 0 0 0-3-3 3 3 0 0 0-3-3Z"/><path d="M12 8v8M9 12h6"/></svg>
+        <span class="w-10 h-10 shrink-0">
+          <img src="assets/logo.svg" alt="人工智能通识教育平台标识" class="w-full h-full" />
         </span>
         <span class="font-black text-white leading-tight">湖南省中小学<br/>人工智能教育服务平台</span>
       </div>
@@ -709,8 +703,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-brand-200/60">
       <p>© 2026 湖南省中小学人工智能通识教育平台　主办单位：湖南省教育厅</p>
       <p class="flex items-center gap-4">
-        <a href="#" class="hover:text-white transition-colors">湘ICP备 2026000000 号</a>
-        <a href="#" class="hover:text-white transition-colors">湘公网安备 43010000000000 号</a>
+        <a href="#" class="hover:text-white transition-colors">备案号：湘ICP备09005173号-8</a>
+        <a href="#" class="hover:text-white transition-colors">湘公网安备：43010202000676号</a>
       </p>
     </div>
   </div>
