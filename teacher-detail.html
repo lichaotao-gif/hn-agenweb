@@ -37,7 +37,7 @@
 <body class="antialiased">
 
 <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-brand-100">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 h-16 grid grid-cols-[minmax(0,1fr)_auto] lg:grid-cols-[minmax(250px,1fr)_auto_minmax(120px,1fr)] items-center gap-4">
     <a href="index.html" class="flex items-center gap-2.5 shrink-0">
       <span class="w-10 h-10 shrink-0">
         <img src="assets/logo.svg" alt="人工智能通识教育平台标识" class="w-full h-full" />
@@ -49,11 +49,10 @@
       <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="courses.html">课程资源</a></li>
       <li><a class="px-3 py-2 rounded-lg bg-brand-50 text-brand-700 font-semibold transition-colors" href="index.html#training">师训中心</a></li>
       <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="events.html">赛事活动</a></li>
-      <li><button onclick="openDownload()" class="dl-nav inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold shadow-card transition-colors cursor-pointer"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>下载</button></li>
     </ul>
-    <a href="index.html#training" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-brand-700 font-medium hover:bg-brand-50 transition-colors">
-      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7M19 12H5"/></svg>返回
-    </a>
+    <div class="justify-self-end flex items-center gap-2 shrink-0">
+      <button onclick="openDownload()" class="dl-nav hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold shadow-card transition-colors cursor-pointer"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>下载</button>
+    </div>
   </nav>
 </header>
 
@@ -153,7 +152,6 @@
             <img src="assets/logo.svg" alt="人工智能通识教育平台标识" class="w-12 h-12 rounded-xl" />
           </span>
           <div>
-            <p class="text-xs font-semibold tracking-[.2em] text-brand-200">CLIENT DOWNLOAD</p>
             <h3 id="downloadTitle" class="mt-1 text-2xl font-black leading-tight">人工智能通识教育平台</h3>
             <p class="mt-1 text-sm text-white/75">授课客户端 · 支持 macOS 与 Windows 双平台</p>
           </div>
