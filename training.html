@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>师训中心 · 讲师详情 · 湖南省中小学人工智能通识教育平台</title>
-<meta name="description" content="师训中心讲师详情 —— 主讲教师介绍与其培训课程视频。" />
+<title>师训中心 · 湖南省中小学人工智能通识教育平台</title>
+<meta name="description" content="师训中心 —— 名师领衔的中小学人工智能教师培训课程，每门课均附主讲教师介绍。" />
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,22 +19,16 @@
 <style>
   html{scroll-behavior:smooth;} body{font-family:"Noto Sans SC",system-ui,sans-serif;color:#164E63;background:#F7FEFF;} ::selection{background:#A5F3FC;}
   .cover{position:relative;overflow:hidden;} .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.28));}
-  .cv1{background:linear-gradient(135deg,#22D3EE,#0891B2);} .cv4{background:linear-gradient(135deg,#A78BFA,#0E7490);} .cv6{background:linear-gradient(135deg,#F472B6,#0E7490);}
-
-  .cover-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
-  .cover::after { z-index:1; }
-  .cover > :not(.cover-img):not(.absolute) { position:relative; z-index:10; } .cover > .absolute { z-index:10; }
-
+  .cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;} .cover::after{z-index:1;} .cover>:not(.cover-img):not(.absolute){position:relative;z-index:10;} .cover>.absolute{z-index:10;}
   .lift{transition:transform .2s,box-shadow .2s,border-color .2s;} .lift:hover{transform:translateY(-6px);box-shadow:0 18px 40px -12px rgba(8,145,178,.30);}
   @media (prefers-reduced-motion:reduce){.lift{transition:none!important;transform:none!important;} html{scroll-behavior:auto;}}
-
   /* 下载按钮引导脉冲 */
   @keyframes dlPulse{0%{box-shadow:0 0 0 0 rgba(6,182,212,.55)}70%{box-shadow:0 0 0 9px rgba(6,182,212,0)}100%{box-shadow:0 0 0 0 rgba(6,182,212,0)}}
   .dl-nav{animation:dlPulse 2.2s ease-out infinite;}
   @media (prefers-reduced-motion:reduce){.dl-nav{animation:none!important;}}
 </style>
 </head>
-<body class="antialiased">
+<body class="antialiased min-h-screen flex flex-col">
 
 <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-brand-100">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 h-16 grid grid-cols-[minmax(0,1fr)_auto] lg:grid-cols-[minmax(250px,1fr)_auto_minmax(120px,1fr)] items-center gap-4">
@@ -56,86 +50,156 @@
   </nav>
 </header>
 
-<main>
-  <!-- 讲师信息头 -->
-  <section class="bg-gradient-to-br from-brand-50 via-white to-brand-100 border-b border-brand-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 lg:py-14">
-      <nav class="text-sm text-brand-800/60 mb-6 flex items-center gap-2 flex-wrap">
-        <a href="index.html" class="hover:text-brand-600">首页</a><span>/</span>
-        <a href="training.html" class="hover:text-brand-600">师训中心</a><span>/</span>
-        <span class="text-brand-800">李建国</span>
+<main class="flex-1">
+  <!-- 横幅 -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-600 to-brand-800 text-white">
+    <div class="pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full bg-brand-400/20 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-24 -left-10 w-80 h-80 rounded-full bg-grass-400/15 blur-3xl"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
+      <nav class="text-sm text-white/70 mb-5 flex items-center gap-2 flex-wrap">
+        <a href="index.html" class="hover:text-white">首页</a><span>/</span>
+        <span class="text-white">师训中心</span>
       </nav>
-      <div class="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
-        <span class="grid place-items-center w-28 h-28 sm:w-32 sm:h-32 rounded-3xl bg-gradient-to-br from-brand-400 to-brand-600 text-white text-5xl font-black shadow-card shrink-0">李</span>
-        <div class="flex-1">
-          <div class="flex items-center gap-3 flex-wrap">
-            <h1 class="text-3xl font-black text-brand-900">李建国</h1>
-            <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-brand-600 text-white">正高级教师</span>
-            <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-grass-500/15 text-grass-600">省级名师</span>
-          </div>
-          <p class="mt-2 text-brand-700 font-medium">湖南师大附中 · 信息技术教研组长</p>
-          <p class="mt-4 text-brand-800/80 leading-relaxed max-w-3xl">
-            从事中小学信息技术与人工智能教育 15 年，主持省级课题 4 项，主编人工智能校本教材 2 套。
-            长期致力于将前沿 AI 技术转化为适合中小学生的课堂内容，多次担任全省教学竞赛评委与教师培训主讲。
-          </p>
-          <div class="mt-5 flex flex-wrap gap-6 text-sm">
-            <div><span class="text-2xl font-black text-brand-700">12</span><span class="text-brand-800/60 ml-1.5">门培训课程</span></div>
-            <div><span class="text-2xl font-black text-brand-700">3.4万</span><span class="text-brand-800/60 ml-1.5">教师学习</span></div>
-            <div><span class="text-2xl font-black text-brand-700">15</span><span class="text-brand-800/60 ml-1.5">年教龄</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 荣誉标签 -->
-      <div class="mt-7 flex flex-wrap gap-2">
-        <span class="px-3 py-1.5 rounded-full bg-white border border-brand-100 text-sm text-brand-700 shadow-sm">全国优秀教师</span>
-        <span class="px-3 py-1.5 rounded-full bg-white border border-brand-100 text-sm text-brand-700 shadow-sm">湖南省学科带头人</span>
-        <span class="px-3 py-1.5 rounded-full bg-white border border-brand-100 text-sm text-brand-700 shadow-sm">人工智能教育专家库成员</span>
+      <h1 class="text-4xl sm:text-5xl font-black leading-tight">师训中心</h1>
+      <p class="mt-4 text-white/80 text-lg max-w-2xl leading-relaxed">名师领衔的中小学人工智能教师培训课程，覆盖课程标准、教学方法、工具应用与教学评价，助力教师快速胜任 AI 课堂。</p>
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl">
+        <div><div class="text-2xl sm:text-3xl font-black">60<span class="text-brand-200">+</span></div><div class="text-sm text-white/70 mt-0.5">培训课程</div></div>
+        <div><div class="text-2xl sm:text-3xl font-black">30<span class="text-brand-200">+</span></div><div class="text-sm text-white/70 mt-0.5">特/高级名师</div></div>
+        <div><div class="text-2xl sm:text-3xl font-black">8<span class="text-brand-200">万+</span></div><div class="text-sm text-white/70 mt-0.5">教师学习</div></div>
+        <div><div class="text-2xl sm:text-3xl font-black">免费</div><div class="text-sm text-white/70 mt-0.5">在线学习</div></div>
       </div>
     </div>
   </section>
 
-  <!-- 讲师课程 -->
+  <!-- 列表 -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-    <h2 class="text-xl font-black text-brand-900 mb-6">主讲培训课程</h2>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <a href="course-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
-        <div class="cover cv1 aspect-video grid place-items-center">
-          <img src="assets/generated/jpg/teacher-training.jpg" alt="中小学 AI 课程标准解读封面" class="cover-img" />
+    <!-- 筛选 -->
+    <div id="trFilter" class="flex flex-wrap gap-2 mb-8">
+      <button data-ef="all" class="tr-tab px-4 py-1.5 rounded-full bg-brand-600 text-white text-sm font-medium cursor-pointer">全部</button>
+      <button data-ef="standard" class="tr-tab px-4 py-1.5 rounded-full bg-white border border-brand-100 text-brand-700 text-sm font-medium hover:border-brand-300 transition-colors cursor-pointer">课标解读</button>
+      <button data-ef="method" class="tr-tab px-4 py-1.5 rounded-full bg-white border border-brand-100 text-brand-700 text-sm font-medium hover:border-brand-300 transition-colors cursor-pointer">教学方法</button>
+      <button data-ef="tool" class="tr-tab px-4 py-1.5 rounded-full bg-white border border-brand-100 text-brand-700 text-sm font-medium hover:border-brand-300 transition-colors cursor-pointer">工具应用</button>
+    </div>
+
+    <div id="trGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <article data-cat="standard" class="tr-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <a href="teacher-detail.html" class="block cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/teacher-training.jpg" alt="中小学 AI 课程标准解读培训封面" class="cover-img" />
           <span class="relative z-10 grid place-items-center w-14 h-14 rounded-full bg-white/25 backdrop-blur group-hover:scale-110 transition-transform"><svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="absolute bottom-3 right-3 z-10 px-2 py-0.5 rounded-md text-xs font-semibold bg-black/55 text-white">6 学时</span>
+        </a>
+        <div class="p-4">
+          <a href="teacher-detail.html"><h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">中小学 AI 课程标准解读</h3></a>
+          <div class="mt-3 flex items-center gap-3 pt-3 border-t border-brand-50">
+            <span class="grid place-items-center w-11 h-11 rounded-full bg-gradient-to-br from-brand-400 to-brand-600 text-white font-bold shrink-0">李</span>
+            <div class="min-w-0">
+              <div class="text-sm font-bold text-brand-900">李建国 <span class="text-xs font-normal text-brand-600">· 正高级教师</span></div>
+              <div class="text-xs text-brand-800/55 truncate">湖南师大附中 · 信息技术教研组长，深耕 AI 教育 15 年。</div>
+            </div>
+          </div>
         </div>
-        <div class="p-4"><h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">中小学 AI 课程标准解读</h3><p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">系统解读课程指南，帮助教师把握教学目标与实施路径。</p></div>
-      </a>
-      <a href="course-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
-        <div class="cover cv4 aspect-video grid place-items-center">
-          <img src="assets/generated/jpg/pbl-teaching.jpg" alt="AI 课堂教学设计实务封面" class="cover-img" />
+      </article>
+
+      <article data-cat="method" class="tr-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <a href="teacher-detail.html" class="block cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/python-coding.jpg" alt="零基础教师 Python 教学法封面" class="cover-img" />
           <span class="relative z-10 grid place-items-center w-14 h-14 rounded-full bg-white/25 backdrop-blur group-hover:scale-110 transition-transform"><svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="absolute bottom-3 right-3 z-10 px-2 py-0.5 rounded-md text-xs font-semibold bg-black/55 text-white">8 学时</span>
+        </a>
+        <div class="p-4">
+          <a href="teacher-detail.html"><h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">零基础教师 Python 教学法</h3></a>
+          <div class="mt-3 flex items-center gap-3 pt-3 border-t border-brand-50">
+            <span class="grid place-items-center w-11 h-11 rounded-full bg-gradient-to-br from-grass-400 to-grass-600 text-white font-bold shrink-0">王</span>
+            <div class="min-w-0">
+              <div class="text-sm font-bold text-brand-900">王雅琴 <span class="text-xs font-normal text-brand-600">· 省级骨干教师</span></div>
+              <div class="text-xs text-brand-800/55 truncate">长沙市青竹湖学校 · 全国信息素养大赛一等奖指导教师。</div>
+            </div>
+          </div>
         </div>
-        <div class="p-4"><h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">AI 课堂教学设计实务</h3><p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">从教学目标到课堂活动，手把手设计一节优质 AI 课。</p></div>
-      </a>
-      <a href="course-detail.html" class="lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
-        <div class="cover cv6 aspect-video grid place-items-center">
-          <img src="assets/generated/jpg/computer-vision-experiment.jpg" alt="人工智能伦理与教学封面" class="cover-img" />
+      </article>
+
+      <article data-cat="tool" class="tr-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <a href="teacher-detail.html" class="block cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/ai-app-modules.jpg" alt="用 AI 工具提升课堂效率封面" class="cover-img" />
           <span class="relative z-10 grid place-items-center w-14 h-14 rounded-full bg-white/25 backdrop-blur group-hover:scale-110 transition-transform"><svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="absolute bottom-3 right-3 z-10 px-2 py-0.5 rounded-md text-xs font-semibold bg-black/55 text-white">5 学时</span>
+        </a>
+        <div class="p-4">
+          <a href="teacher-detail.html"><h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">用 AI 工具提升课堂效率</h3></a>
+          <div class="mt-3 flex items-center gap-3 pt-3 border-t border-brand-50">
+            <span class="grid place-items-center w-11 h-11 rounded-full bg-gradient-to-br from-violet-400 to-brand-700 text-white font-bold shrink-0">周</span>
+            <div class="min-w-0">
+              <div class="text-sm font-bold text-brand-900">周敏 <span class="text-xs font-normal text-brand-600">· 特级教师</span></div>
+              <div class="text-xs text-brand-800/55 truncate">株洲市教科院 · 人工智能教育研究中心主任。</div>
+            </div>
+          </div>
         </div>
-        <div class="p-4"><h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">人工智能伦理与教学</h3><p class="mt-1.5 text-sm text-brand-800/55 line-clamp-2">引导学生理解 AI 的边界与责任，培养正确价值观。</p></div>
-      </a>
+      </article>
+
+      <article data-cat="method" class="tr-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <a href="teacher-detail.html" class="block cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/pbl-teaching.jpg" alt="人工智能项目式教学设计封面" class="cover-img" />
+          <span class="relative z-10 grid place-items-center w-14 h-14 rounded-full bg-white/25 backdrop-blur group-hover:scale-110 transition-transform"><svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="absolute bottom-3 right-3 z-10 px-2 py-0.5 rounded-md text-xs font-semibold bg-black/55 text-white">7 学时</span>
+        </a>
+        <div class="p-4">
+          <a href="teacher-detail.html"><h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">人工智能项目式教学设计</h3></a>
+          <div class="mt-3 flex items-center gap-3 pt-3 border-t border-brand-50">
+            <span class="grid place-items-center w-11 h-11 rounded-full bg-gradient-to-br from-sky-400 to-blue-600 text-white font-bold shrink-0">陈</span>
+            <div class="min-w-0">
+              <div class="text-sm font-bold text-brand-900">陈志强 <span class="text-xs font-normal text-brand-600">· 高级教师</span></div>
+              <div class="text-xs text-brand-800/55 truncate">岳阳市第一中学 · 省级 STEM 教育实验校负责人。</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article data-cat="method" class="tr-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <a href="teacher-detail.html" class="block cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/machine-learning-classroom.jpg" alt="机器学习课堂教学实务封面" class="cover-img" />
+          <span class="relative z-10 grid place-items-center w-14 h-14 rounded-full bg-white/25 backdrop-blur group-hover:scale-110 transition-transform"><svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="absolute bottom-3 right-3 z-10 px-2 py-0.5 rounded-md text-xs font-semibold bg-black/55 text-white">10 学时</span>
+        </a>
+        <div class="p-4">
+          <a href="teacher-detail.html"><h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">机器学习课堂教学实务</h3></a>
+          <div class="mt-3 flex items-center gap-3 pt-3 border-t border-brand-50">
+            <span class="grid place-items-center w-11 h-11 rounded-full bg-gradient-to-br from-teal-400 to-emerald-600 text-white font-bold shrink-0">刘</span>
+            <div class="min-w-0">
+              <div class="text-sm font-bold text-brand-900">刘洋 <span class="text-xs font-normal text-brand-600">· 省级名师</span></div>
+              <div class="text-xs text-brand-800/55 truncate">湘潭市电教馆 · 长期开展中学 AI 教师培训。</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article data-cat="standard" class="tr-card lift group bg-white rounded-2xl overflow-hidden shadow-card border border-brand-100 cursor-pointer">
+        <a href="teacher-detail.html" class="block cover aspect-video grid place-items-center">
+          <img src="assets/generated/jpg/ai-classroom-students.jpg" alt="课堂中的 AI 伦理与素养封面" class="cover-img" />
+          <span class="relative z-10 grid place-items-center w-14 h-14 rounded-full bg-white/25 backdrop-blur group-hover:scale-110 transition-transform"><svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="absolute bottom-3 right-3 z-10 px-2 py-0.5 rounded-md text-xs font-semibold bg-black/55 text-white">4 学时</span>
+        </a>
+        <div class="p-4">
+          <a href="teacher-detail.html"><h3 class="font-bold text-brand-900 group-hover:text-brand-600 transition-colors">课堂中的 AI 伦理与素养</h3></a>
+          <div class="mt-3 flex items-center gap-3 pt-3 border-t border-brand-50">
+            <span class="grid place-items-center w-11 h-11 rounded-full bg-gradient-to-br from-rose-400 to-pink-600 text-white font-bold shrink-0">赵</span>
+            <div class="min-w-0">
+              <div class="text-sm font-bold text-brand-900">赵丽 <span class="text-xs font-normal text-brand-600">· 教研员</span></div>
+              <div class="text-xs text-brand-800/55 truncate">常德市教科院 · 信息科技教研员，关注育人价值。</div>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
+
+    <p id="trEmpty" class="hidden text-center text-brand-800/50 py-12">该分类下暂无培训课程</p>
   </section>
 </main>
 
-<footer class="bg-brand-900 text-brand-200/60 mt-4">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 text-center text-xs">
-    <p>© 2026 湖南省中小学人工智能通识教育平台　主办单位：湖南省教育厅</p>
-    <p class="mt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
-      <a href="#" class="hover:text-white transition-colors">备案号：湘ICP备09005173号-8</a>
-      <a href="#" class="hover:text-white transition-colors">湘公网安备：43010202000676号</a>
-    </p>
-  </div>
+<footer class="text-brand-100" style="background:linear-gradient(180deg,#0B2230 0%,#06141C 100%)">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 text-center text-xs text-brand-200/60">© 2026 湖南省中小学人工智能通识教育平台　主办单位：湖南省教育厅</div>
 </footer>
+
 <div id="downloadModal" class="hidden fixed inset-0 z-50">
   <div class="absolute inset-0 bg-brand-900/60 backdrop-blur-sm" onclick="closeDownload()"></div>
   <div class="relative min-h-full grid place-items-center p-4">
@@ -200,10 +264,24 @@
     </div>
   </div>
 </div>
+
 <script>
   function openDownload(){ const m=document.getElementById('downloadModal'); m.classList.remove('hidden'); document.body.style.overflow='hidden'; }
   function closeDownload(){ document.getElementById('downloadModal').classList.add('hidden'); document.body.style.overflow=''; }
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDownload(); });
+
+  // 师训分类筛选
+  (function(){
+    const wrap=document.getElementById('trFilter'); const tabs=wrap.querySelectorAll('.tr-tab');
+    const cards=document.querySelectorAll('#trGrid .tr-card'); const empty=document.getElementById('trEmpty');
+    tabs.forEach(btn=>btn.addEventListener('click',()=>{
+      tabs.forEach(t=>{ t.classList.remove('bg-brand-600','text-white'); t.classList.add('bg-white','border','border-brand-100','text-brand-700'); });
+      btn.classList.add('bg-brand-600','text-white'); btn.classList.remove('bg-white','border','border-brand-100','text-brand-700');
+      const f=btn.dataset.ef; let shown=0;
+      cards.forEach(c=>{ const ok=f==='all'||c.dataset.cat===f; c.classList.toggle('hidden',!ok); if(ok)shown++; });
+      empty.classList.toggle('hidden', shown>0);
+    }));
+  })();
 </script>
 </body>
 </html>
