@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>2026世界机器人大会青少年机器人设计与信息素养大赛(信息素养类)华中赛区(湖南) · 湖南省中小学人工智能通识教育平台</title>
-<meta name="description" content="2026世界机器人大会青少年机器人设计与信息素养大赛(信息素养类)华中赛区(湖南)，含赛事简介、赛程安排、参赛附件与报名入口。" />
+<title>2026年第十届全国青少年无人机大赛湖南省赛 · 湖南省中小学人工智能通识教育平台</title>
+<meta name="description" content="2026年第十届全国青少年无人机大赛湖南省赛详情页 —— 赛事简介、赛程安排、参赛附件、奖项设置与在线报名。" />
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,8 +17,13 @@
     boxShadow: { card:'0 1px 2px rgba(16,78,89,.04), 0 8px 24px -8px rgba(8,145,178,.18)' } } } }
 </script>
 <style>
-  html{scroll-behavior:smooth;} body{font-family:"Noto Sans SC",system-ui,sans-serif;color:#164E63;background:#F7FEFF;overflow-x:hidden;} ::selection{background:#A5F3FC;}
+  html{scroll-behavior:smooth;} body{font-family:"Noto Sans SC",system-ui,sans-serif;color:#164E63;background:#F7FEFF;} ::selection{background:#A5F3FC;}
   @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
+
+  /* 下载按钮引导脉冲 */
+  @keyframes dlPulse{0%{box-shadow:0 0 0 0 rgba(6,182,212,.55)}70%{box-shadow:0 0 0 9px rgba(6,182,212,0)}100%{box-shadow:0 0 0 0 rgba(6,182,212,0)}}
+  .dl-nav{animation:dlPulse 2.2s ease-out infinite;}
+  @media (prefers-reduced-motion:reduce){.dl-nav{animation:none!important;}}
 </style>
 </head>
 <body class="antialiased">
@@ -49,18 +54,17 @@
     <nav class="text-sm text-white/70 mb-5 flex items-center gap-2 flex-wrap">
       <a href="index.html" class="hover:text-white">首页</a><span>/</span>
       <a href="events.html" class="hover:text-white">赛事活动</a><span>/</span>
-      <span class="text-white">机器人设计与信息素养大赛</span>
+      <span class="text-white">青少年无人机大赛湖南省赛</span>
     </nav>
     <div class="flex items-center gap-2 flex-wrap">
       <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-bold bg-grass-500 text-white"><span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>报名中</span>
-      <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-white/15 text-white backdrop-blur">华中赛区(湖南)</span>
-      <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-white/15 text-white backdrop-blur">信息素养类</span>
+      <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-white/15 text-white backdrop-blur">无人机</span>
     </div>
-    <h1 class="mt-4 text-2xl sm:text-4xl font-black leading-tight">2026世界机器人大会青少年机器人设计与信息素养大赛(信息素养类)华中赛区(湖南)</h1>
-    <p class="mt-3 text-white/80 max-w-2xl">面向青少年开展机器人设计与信息素养综合挑战，聚焦工程实践、创意设计、算法编程与数字素养表达。</p>
+    <h1 class="mt-4 text-2xl sm:text-4xl font-black leading-tight">2026年第十届全国青少年无人机大赛湖南省赛</h1>
+    <p class="mt-3 text-white/80 max-w-2xl">围绕无人机操控、编程、任务协同与工程实践，展示青少年航空科技创新能力。</p>
     <div class="mt-5 flex flex-wrap items-center gap-6 text-sm text-white/80">
-      <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>比赛时间 2026-07-19</span>
-      <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>长沙市开福区第一小学</span>
+      <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>报名截止 2026-08-15</span>
+      <span class="inline-flex items-center gap-1.5"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>8,924 人已报名</span>
     </div>
   </div>
 </section>
@@ -73,26 +77,34 @@
       <section class="bg-white rounded-2xl shadow-card border border-brand-100 p-6">
         <h2 class="text-lg font-black text-brand-900 mb-3">赛事简介</h2>
         <div class="space-y-3 text-brand-800/80 leading-relaxed">
-          <p>2026世界机器人大会青少年机器人设计与信息素养大赛(信息素养类)华中赛区(湖南)，将于 2026 年 7 月 19 日在长沙市开福区第一小学举行。</p>
-          <p>赛事面向青少年，覆盖机器人设计、信息素养与现场任务挑战，选手需要围绕机械结构、传感器、算法学习、编程运用和实践校准完成作品搭建与展示。</p>
+          <p>本大赛面向全省青少年，围绕无人机基础操控、编程应用、任务协同与航空科技实践展开，培养工程思维、空间感知与问题解决能力。</p>
+          <p>赛事鼓励学生在安全规范下完成飞行任务、路径规划和创意应用展示，突出实践过程、团队协作与现场应变能力。</p>
         </div>
 
         <!-- 图片组：一行三个 -->
         <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3">
           <figure class="group rounded-xl overflow-hidden border border-brand-100 cursor-pointer">
-            <div class="aspect-[4/3] overflow-hidden"><img src="assets/generated/jpg/robotics-kit.jpg" alt="机器人赛项展示" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
-            <figcaption class="px-2.5 py-1.5 text-xs text-brand-800/60">机器人赛项展示</figcaption>
+            <div class="aspect-[4/3] overflow-hidden"><img src="assets/generated/jpg/ai-classroom-students.jpg" alt="往届赛事现场" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
+            <figcaption class="px-2.5 py-1.5 text-xs text-brand-800/60">往届决赛现场</figcaption>
           </figure>
           <figure class="group rounded-xl overflow-hidden border border-brand-100 cursor-pointer">
-            <div class="aspect-[4/3] overflow-hidden"><img src="assets/generated/jpg/computer-vision-experiment.jpg" alt="算法调试现场" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
-            <figcaption class="px-2.5 py-1.5 text-xs text-brand-800/60">算法调试现场</figcaption>
+            <div class="aspect-[4/3] overflow-hidden"><img src="assets/generated/jpg/robotics-kit.jpg" alt="学生作品展示" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
+            <figcaption class="px-2.5 py-1.5 text-xs text-brand-800/60">学生作品展示</figcaption>
           </figure>
           <figure class="group rounded-xl overflow-hidden border border-brand-100 cursor-pointer">
-            <div class="aspect-[4/3] overflow-hidden"><img src="assets/generated/jpg/ai-app-modules.jpg" alt="无人机任务展示" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
-            <figcaption class="px-2.5 py-1.5 text-xs text-brand-800/60">无人机任务展示</figcaption>
+            <div class="aspect-[4/3] overflow-hidden"><img src="assets/generated/jpg/machine-learning-classroom.jpg" alt="评审答辩环节" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" /></div>
+            <figcaption class="px-2.5 py-1.5 text-xs text-brand-800/60">评审答辩环节</figcaption>
           </figure>
         </div>
 
+        <!-- 视频：一行一个 -->
+        <div class="mt-5">
+          <video class="w-full rounded-xl border border-brand-100 bg-black aspect-video" controls preload="none" poster="assets/generated/jpg/python-coding.jpg">
+            <source src="assets/files/赛事宣传片.mp4" type="video/mp4" />
+            您的浏览器不支持视频播放，请<a href="assets/files/赛事宣传片.mp4" class="text-brand-600 underline">下载观看</a>。
+          </video>
+          <p class="mt-2 text-xs text-brand-800/55">赛事官方宣传片 · 时长 02:18</p>
+        </div>
       </section>
 
       <!-- 赛程安排 -->
@@ -101,23 +113,23 @@
         <ol class="relative border-l-2 border-brand-100 ml-2 space-y-6">
           <li class="pl-6 relative">
             <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-brand-500/15"></span>
-            <div class="text-sm font-bold text-brand-900">报名与赛前准备</div>
-            <div class="text-xs text-brand-800/55 mt-0.5">赛前完成报名信息提交、器材调试与任务规则学习</div>
+            <div class="text-sm font-bold text-brand-900">报名与作品提交</div>
+            <div class="text-xs text-brand-800/55 mt-0.5">2026-06-20 ~ 2026-08-15 · 在线报名并上传作品</div>
           </li>
           <li class="pl-6 relative">
             <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-brand-500/15"></span>
-            <div class="text-sm font-bold text-brand-900">湖南选拔赛现场</div>
-            <div class="text-xs text-brand-800/55 mt-0.5">2026-07-19 · 长沙市开福区第一小学</div>
+            <div class="text-sm font-bold text-brand-900">初评（线上）</div>
+            <div class="text-xs text-brand-800/55 mt-0.5">2026-08-16 ~ 2026-08-31 · 专家线上评审，公布入围名单</div>
           </li>
           <li class="pl-6 relative">
             <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-brand-500/15"></span>
-            <div class="text-sm font-bold text-brand-900">赛项任务与评审</div>
-            <div class="text-xs text-brand-800/55 mt-0.5">机器人 PRO / BOT 与 UAV 赛项按规则完成现场任务</div>
+            <div class="text-sm font-bold text-brand-900">现场决赛与答辩</div>
+            <div class="text-xs text-brand-800/55 mt-0.5">2026-09 · 入围选手现场展示与答辩</div>
           </li>
           <li class="pl-6 relative">
             <span class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-brand-500/15"></span>
-            <div class="text-sm font-bold text-brand-900">成绩确认与晋级</div>
-            <div class="text-xs text-brand-800/55 mt-0.5">根据现场成绩确认湖南选拔赛结果及后续晋级安排</div>
+            <div class="text-sm font-bold text-brand-900">颁奖典礼</div>
+            <div class="text-xs text-brand-800/55 mt-0.5">2026-10 · 公布获奖结果并颁发证书</div>
           </li>
         </ol>
       </section>
@@ -127,13 +139,13 @@
         <h2 class="text-lg font-black text-brand-900 mb-4">参赛附件</h2>
         <ul class="space-y-3">
           <li>
-            <a href="assets/files/2026-world-robot-contest-hunan-selection.pdf" download class="group flex items-center gap-3 p-3 rounded-xl border border-brand-100 hover:border-brand-300 hover:bg-brand-50/50 transition-colors cursor-pointer">
+            <a href="assets/files/赛事通知.pdf" download class="group flex items-center gap-3 p-3 rounded-xl border border-brand-100 hover:border-brand-300 hover:bg-brand-50/50 transition-colors cursor-pointer">
               <span class="grid place-items-center w-10 h-10 rounded-lg bg-rose-50 text-rose-600 shrink-0">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>
               </span>
               <div class="min-w-0 flex-1">
-                <div class="text-sm font-semibold text-brand-900 truncate group-hover:text-brand-600 transition-colors">2026世界机器人大会青少年机器人设计与信息素养大赛(信息素养类)华中赛区(湖南)附件.pdf</div>
-                <div class="text-xs text-brand-800/50">PDF · 920 KB</div>
+                <div class="text-sm font-semibold text-brand-900 truncate group-hover:text-brand-600 transition-colors">赛事通知（红头文件）.pdf</div>
+                <div class="text-xs text-brand-800/50">PDF · 1.2 MB</div>
               </div>
               <svg class="w-5 h-5 text-brand-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
             </a>
@@ -150,6 +162,18 @@
               <svg class="w-5 h-5 text-brand-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
             </a>
           </li>
+          <li>
+            <a href="assets/files/作品评审标准.pdf" download class="group flex items-center gap-3 p-3 rounded-xl border border-brand-100 hover:border-brand-300 hover:bg-brand-50/50 transition-colors cursor-pointer">
+              <span class="grid place-items-center w-10 h-10 rounded-lg bg-rose-50 text-rose-600 shrink-0">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg>
+              </span>
+              <div class="min-w-0 flex-1">
+                <div class="text-sm font-semibold text-brand-900 truncate group-hover:text-brand-600 transition-colors">作品评审标准.pdf</div>
+                <div class="text-xs text-brand-800/50">PDF · 680 KB</div>
+              </div>
+              <svg class="w-5 h-5 text-brand-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+            </a>
+          </li>
         </ul>
       </section>
 
@@ -157,10 +181,10 @@
       <section class="bg-white rounded-2xl shadow-card border border-brand-100 p-6">
         <h2 class="text-lg font-black text-brand-900 mb-4">奖项设置</h2>
         <ul class="grid sm:grid-cols-2 gap-3 text-sm text-brand-800/80">
-          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-amber-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>优胜队伍：按赛项规则评定</li>
-          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>晋级资格：根据选拔结果确定</li>
-          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-grass-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>赛项证书：按官方通知发放</li>
-          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>指导教师与组织奖：按赛事安排执行</li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-amber-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>一等奖：各组别 5 名</li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>二等奖：各组别 10 名</li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-grass-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>三等奖：各组别 20 名</li>
+          <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>优秀指导教师 & 优秀组织奖</li>
         </ul>
       </section>
     </div>
@@ -169,21 +193,21 @@
     <aside class="lg:col-span-1">
       <div class="bg-white rounded-2xl shadow-card border border-brand-100 overflow-hidden lg:sticky lg:top-20">
         <div class="bg-gradient-to-br from-brand-600 to-brand-800 text-white p-6">
-          <div class="text-sm text-white/80">距比赛开始</div>
+          <div class="text-sm text-white/80">距报名截止</div>
           <div class="mt-2 flex items-end gap-1">
-            <span class="text-4xl font-black">20</span><span class="mb-1 text-white/80">天</span>
+            <span class="text-4xl font-black">51</span><span class="mb-1 text-white/80">天</span>
           </div>
-          <div class="mt-1 text-xs text-white/70">比赛日期 2026-07-19</div>
+          <div class="mt-1 text-xs text-white/70">截止日期 2026-08-15</div>
         </div>
         <div class="p-6 space-y-4">
           <dl class="space-y-3 text-sm">
-            <div class="flex items-center justify-between"><dt class="text-brand-800/55">主办单位</dt><dd class="font-medium text-brand-900">赛事组委会</dd></div>
-            <div class="flex items-center justify-between"><dt class="text-brand-800/55">参赛对象</dt><dd class="font-medium text-brand-900">中小学生</dd></div>
+            <div class="flex items-center justify-between"><dt class="text-brand-800/55">主办单位</dt><dd class="font-medium text-brand-900">湖南省教育厅</dd></div>
+            <div class="flex items-center justify-between"><dt class="text-brand-800/55">参赛对象</dt><dd class="font-medium text-brand-900">全省中小学生</dd></div>
             <div class="flex items-center justify-between"><dt class="text-brand-800/55">参赛形式</dt><dd class="font-medium text-brand-900">个人 / 团队</dd></div>
             <div class="flex items-center justify-between"><dt class="text-brand-800/55">报名费用</dt><dd class="font-medium text-grass-600">免费</dd></div>
           </dl>
-          <button onclick="alert('请登录后报名（演示页面）')" class="block w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold shadow-card transition-colors text-center cursor-pointer">立即报名</button>
-          <p class="text-xs text-brand-800/50 text-center">Demo 演示报名入口</p>
+          <button onclick="alert('请登录后报名（演示页面）')" class="w-full py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold shadow-card transition-colors cursor-pointer">立即报名</button>
+          <p class="text-xs text-brand-800/50 text-center">已有 <strong class="text-brand-700">8,924</strong> 名学生报名参赛</p>
         </div>
       </div>
     </aside>
@@ -212,7 +236,7 @@
         </button>
         <div class="relative flex flex-col items-center text-center gap-3">
           <span class="grid place-items-center w-16 h-16 rounded-2xl bg-white/15 backdrop-blur ring-1 ring-white/30 shrink-0">
-            <svg class="w-9 h-9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3 3 3 0 0 0-3 3 3 3 0 0 0 0 6 3 3 0 0 0 3 3 3 3 0 0 0 6 0 3 3 0 0 0 3-3 3 3 0 0 0 0-6 3 3 0 0 0-3-3 3 3 0 0 0-3-3Z"/><path d="M12 8v8M9 12h6"/></svg>
+            <img src="assets/logo.svg" alt="人工智能通识教育平台标识" class="w-12 h-12 rounded-xl" />
           </span>
           <div>
             <h3 id="downloadTitle" class="mt-1 text-2xl font-black leading-tight">人工智能通识教育平台</h3>
