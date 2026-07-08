@@ -18,7 +18,16 @@
 </script>
 <style>
   html{scroll-behavior:smooth;} body{font-family:"Noto Sans SC",system-ui,sans-serif;color:#164E63;background:#F7FEFF;overflow-x:hidden;} ::selection{background:#A5F3FC;}
+  h1,p,a,li,dd,dt{overflow-wrap:anywhere;}
+  main .grid > *{min-width:0;}
   @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
+
+  /* H5 mobile nav */
+  @media (max-width:1023px){
+    header{padding-bottom:3rem;}
+    header nav ul.hidden{display:flex!important;position:absolute;left:0;right:0;top:4rem;gap:.25rem;overflow-x:auto;padding:.45rem 1rem;background:rgba(255,255,255,.96);border-top:1px solid #CFFAFE;-webkit-overflow-scrolling:touch;}
+    header nav ul.hidden a{white-space:nowrap;font-size:.875rem;}
+  }
 </style>
 </head>
 <body class="antialiased">
@@ -35,7 +44,7 @@
       <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="index.html">首页</a></li>
       <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="courses.html">课程资源</a></li>
       <li><a class="px-3 py-2 rounded-lg text-brand-700 hover:bg-brand-50 transition-colors" href="training.html">师训中心</a></li>
-      <li><a class="px-3 py-2 rounded-lg bg-brand-50 text-brand-700 font-semibold transition-colors" href="events.html">赛事活动</a></li>
+      <li><a class="px-3 py-2 rounded-lg bg-brand-50 text-brand-700 font-semibold transition-colors" href="events.html">实践活动</a></li>
     </ul>
     <div class="justify-self-end flex items-center gap-2 shrink-0">
       <button onclick="openDownload()" class="dl-nav hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold shadow-card transition-colors cursor-pointer"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>下载</button>
@@ -48,7 +57,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 lg:py-14">
     <nav class="text-sm text-white/70 mb-5 flex items-center gap-2 flex-wrap">
       <a href="index.html" class="hover:text-white">首页</a><span>/</span>
-      <a href="events.html" class="hover:text-white">赛事活动</a><span>/</span>
+      <a href="events.html" class="hover:text-white">实践活动</a><span>/</span>
       <span class="text-white">机器人设计与信息素养大赛</span>
     </nav>
     <div class="flex items-center gap-2 flex-wrap">
@@ -66,9 +75,9 @@
 </section>
 
 <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
-  <div class="grid lg:grid-cols-3 gap-6">
+  <div class="grid lg:grid-cols-3 gap-6 min-w-0">
     <!-- 左：详情 -->
-    <div class="lg:col-span-2 space-y-6">
+    <div class="lg:col-span-2 min-w-0 space-y-6">
       <!-- 赛事简介 -->
       <section class="bg-white rounded-2xl shadow-card border border-brand-100 p-6">
         <h2 class="text-lg font-black text-brand-900 mb-3">赛事简介</h2>
